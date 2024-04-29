@@ -17,10 +17,10 @@ class AppButtomWidget extends StatelessWidget {
        onTap: press,
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(vertical: PADDING),
+        padding: EdgeInsets.symmetric(vertical: PADDING*1.5),
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-          color: primaryColor,
+          borderRadius:  BorderRadius.all(Radius.circular(RADIUS*2)),
+          color: Colors.black,
         ),
         child:  Text(
           label,

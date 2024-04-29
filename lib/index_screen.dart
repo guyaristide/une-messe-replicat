@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:une_messe/core/constants.dart';
 
 import 'components/BottomNavigationWidget.dart';
+import 'home/fragments/home_fragment.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
@@ -22,58 +23,52 @@ class _IndexScreenState extends State<IndexScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-              top: 0,
+      body: SafeArea(
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+                top: 0,
+                bottom: 60,
+                left: 0,
+                right: 0,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: PADDING*2),
+                  color: greenColor.withOpacity(0.15),
+                  child: fragmentList[_selectedIndex]['fragment'],
+                )),
+            Positioned(
               bottom: 0,
               left: 0,
               right: 0,
               child: Container(
-                color: greenColor.withOpacity(0.1),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      fragmentList[_selectedIndex]['fragment'],
-                      SizedBox(
-                        height: 60,
-                      ),
-                    ],
-                  ),
+                color: Colors.white,
+                height: 60,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ...ButtomNavigationList.asMap().entries.map((entry){
+                      final index = entry.key;
+                      final item = entry.value;
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selectedIndex = index;
+                          });
+                        },
+                        child: ButtomNavigationWidget(
+                          label: item['label'],
+                          icon: item['icon'],
+                          indexSelected: _selectedIndex,
+                           currentIndex: index,
+                        ),
+                      );
+                    }).toList(),
+                  ],
                 ),
-              )),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              color: Colors.black,
-              height: 60,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ...ButtomNavigationList.asMap().entries.map((entry){
-                    final index = entry.key;
-                    final item = entry.value;
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _selectedIndex = index;
-                        });
-                      },
-                      child: ButtomNavigationWidget(
-                        label: item['label'],
-                        icon: item['icon'],
-                        indexSelected: _selectedIndex,
-                         currentIndex: index,
-                      ),
-                    );
-                  }).toList(),
-                ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -81,12 +76,7 @@ class _IndexScreenState extends State<IndexScreen> {
 
 final List<Map<String, dynamic>> fragmentList = [
   {
-    'fragment': const Center(
-      child: Text(
-        'Contenu de l\'Accueil',
-        style: TextStyle(fontSize: 24.0),
-      ),
-    ),
+    'fragment': const HomeFragment()
   },
   {
     'fragment': const Center(

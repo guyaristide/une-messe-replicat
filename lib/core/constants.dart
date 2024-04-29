@@ -62,7 +62,10 @@ MaterialColor secondaryColor = MaterialColor(0xFF33363F, color1);
 MaterialColor tertiairColor = MaterialColor(0xFFEAC1A2, color2);
 MaterialColor blackColor = MaterialColor(0xFF33363F, swatchColor);
 Color greenColor = Color(0xFF43675F);
+Color orangeColor = Color(0xFFEC653C);
+Color yellowColor = Color(0xFFFDCF76);
 double PADDING = 10;
+double RADIUS = 12;
 const String boxSettings = 'settings';
 
 
@@ -84,40 +87,40 @@ final List<Map<String, dynamic>> ButtomNavigationList = [
   {
     
     'label': 'PARAMÈTRES',
-    'icon': Icons.setting,
+    'icon': Icons.settings,
   },
 ];
-// final List<Map<String, dynamic>> contratList = [
-//   {
-//     'type': 'Prêt entre amis',
-//     'icon': 'assets/images/graduation-cap.png',
-//   },
-//   {
-//     'type': 'Caution pour voiture',
-//     'icon': 'assets/images/dollar.png',
-//   },
-//   {
-    
-//     'type': 'Caution pour appartement',
-//     'icon': 'assets/images/dollar.png',
-//   },
-//   {
-    
-//     'type': 'Investissements',
-//     'icon': 'assets/images/credit-card.png',
-//   },
-//   {
-    
-//     'type': 'Prêt usurier',
-//     'icon': 'assets/images/bullseye.png',
-//   },
-//   {
-    
-//     'type': 'Achat en plusieurs fois',
-//     'icon': 'assets/images/cart.png',
-//   },
+final List<Map<String, dynamic>> demandeList = [
+  {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Saint Jean-Baptiste',
+    'adresse': 'Morokro',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire Franck et Lise',
+  },
+  {
+    'date': 'SAM. 6 AVRIL - 19H',
+    'communaute': 'Notre Dame de l’Incarnation',
+    'adresse': 'Abidjan Riviera Palmeraie',
+    'intention': 'Repos de l’âme',
+    'motif': 'Pour le bien-aimé Alfred',
+  },
+  {
+    'date': 'VEN. 5 AVRIL - 19H',
+    'communaute': 'Saint Jean-Baptiste',
+    'adresse': 'Morokro',
+    'intention': 'Assistance et Protection',
+    'motif': 'Pour la maladie de Serges',
+  },
+  {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Saint Jean-Baptiste',
+    'adresse': 'Morokro',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire Franck et Lise',
+  },
  
-// ];
+];
 
 // final List<Map<String, dynamic>> historyList = [
 //  {
