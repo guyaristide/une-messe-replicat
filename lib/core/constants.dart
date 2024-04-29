@@ -1,0 +1,171 @@
+import 'package:flutter/material.dart';
+
+
+// 0xFFB24F44 #B24F44
+Map<int, Color> color0 = {
+  50: const Color.fromRGBO(178, 79, 68, .1),
+  100: const Color.fromRGBO(178, 79, 68, .2),
+  200: const Color.fromRGBO(178, 79, 68, .3),
+  300: const Color.fromRGBO(178, 79, 68, .4),
+  400: const Color.fromRGBO(178, 79, 68, .5),
+  500: const Color.fromRGBO(178, 79, 68, .6),
+  600: const Color.fromRGBO(178, 79, 68, .7),
+  700: const Color.fromRGBO(178, 79, 68, .8),
+  800: const Color.fromRGBO(178, 79, 68, .9),
+  900: const Color.fromRGBO(178, 79, 68, 1),
+};
+
+// 0xFFD7E0D9 #D7E0D9
+Map<int, Color> color1 = {
+  50: const Color.fromRGBO(215, 224, 217, .1),
+  100: const Color.fromRGBO(215, 224, 217, .2),
+  200: const Color.fromRGBO(215, 224, 217, .3),
+  300: const Color.fromRGBO(215, 224, 217, .4),
+  400: const Color.fromRGBO(215, 224, 217, .5),
+  500: const Color.fromRGBO(215, 224, 217, .6),
+  600: const Color.fromRGBO(215, 224, 217, .7),
+  700: const Color.fromRGBO(215, 224, 217, .8),
+  800: const Color.fromRGBO(215, 224, 217, .9),
+  900: const Color.fromRGBO(215, 224, 217, 1),
+};
+
+// 0xFF33363F #33363F
+Map<int, Color> swatchColor = {
+  50: const Color.fromRGBO(51, 54, 63, .1),
+  100: const Color.fromRGBO(51, 54, 63, .2),
+  200: const Color.fromRGBO(51, 54, 63, .3),
+  300: const Color.fromRGBO(51, 54, 63, .4),
+  400: const Color.fromRGBO(51, 54, 63, .5),
+  500: const Color.fromRGBO(51, 54, 63, .6),
+  600: const Color.fromRGBO(51, 54, 63, .7),
+  700: const Color.fromRGBO(51, 54, 63, .8),
+  800: const Color.fromRGBO(51, 54, 63, .9),
+  900: const Color.fromRGBO(51, 54, 63, 1),
+};
+// 0xFFEAC1A2 #EAC1A2
+Map<int, Color> color2 = {
+  50: const Color.fromRGBO(234, 193, 162, .1),
+  100: const Color.fromRGBO(234, 193, 162, .2),
+  200: const Color.fromRGBO(234, 193, 162, .3),
+  300: const Color.fromRGBO(234, 193, 162, .4),
+  400: const Color.fromRGBO(234, 193, 162, .5),
+  500: const Color.fromRGBO(234, 193, 162, .6),
+  600: const Color.fromRGBO(234, 193, 162, .7),
+  700: const Color.fromRGBO(234, 193, 162, .8),
+  800: const Color.fromRGBO(234, 193, 162, .9),
+  900: const Color.fromRGBO(234, 193, 162, 1),
+};
+
+
+MaterialColor primaryColor = MaterialColor(0xFFB24F44, color0);
+MaterialColor secondaryColor = MaterialColor(0xFF33363F, color1);
+MaterialColor tertiairColor = MaterialColor(0xFFEAC1A2, color2);
+MaterialColor blackColor = MaterialColor(0xFF33363F, swatchColor);
+Color greenColor = Color(0xFF43675F);
+double PADDING = 10;
+const String boxSettings = 'settings';
+
+
+
+final List<Map<String, dynamic>> ButtomNavigationList = [
+  {
+    'label': 'ACCUEIL',
+    'icon': Icons.home,
+  },
+  {
+    'label': 'DEMANDER',
+    'icon': Icons.search,
+  },
+  {
+    
+    'label': 'PANIER',
+    'icon': Icons.person,
+  },
+  {
+    
+    'label': 'PARAMÈTRES',
+    'icon': Icons.setting,
+  },
+];
+// final List<Map<String, dynamic>> contratList = [
+//   {
+//     'type': 'Prêt entre amis',
+//     'icon': 'assets/images/graduation-cap.png',
+//   },
+//   {
+//     'type': 'Caution pour voiture',
+//     'icon': 'assets/images/dollar.png',
+//   },
+//   {
+    
+//     'type': 'Caution pour appartement',
+//     'icon': 'assets/images/dollar.png',
+//   },
+//   {
+    
+//     'type': 'Investissements',
+//     'icon': 'assets/images/credit-card.png',
+//   },
+//   {
+    
+//     'type': 'Prêt usurier',
+//     'icon': 'assets/images/bullseye.png',
+//   },
+//   {
+    
+//     'type': 'Achat en plusieurs fois',
+//     'icon': 'assets/images/cart.png',
+//   },
+ 
+// ];
+
+// final List<Map<String, dynamic>> historyList = [
+//  {
+//     'name': 'M’bra Oliver',
+//    'type': 'Prêt entre amis',
+//    'date': '20 Avr 2024 à 10h30s',
+//    'price': '20000',
+//   },
+//   {
+//     'name': 'Yaba Morelle',
+//     'type': 'Caution pour voiture',
+//    'date': '20 Avr 2024 à 10h30s',
+//    'price': '20000',
+//   },
+//   {
+    
+//     'name': 'Boni Aristide',
+//     'type': 'Caution pour appartement',
+//    'date': '20 Avr 2024 à 10h30s',
+//    'price': '20000',
+//   },
+//   {
+    
+//     'name': 'Eric kouamé',
+//     'type': 'Prêt usurier',
+//    'date': '20 Avr 2024 à 10h30s',
+//    'price': '20000',
+//   },
+//   {
+    
+//     'name': 'Brice Diao',
+//     'type': 'Achat en plusieurs fois',
+//    'date': '20 Avr 2024 à 10h30s',
+//    'price': '20000',
+//   },
+ 
+// ];
+
+
+// final List<Map<String, dynamic>> receipt = [
+//   {
+//     'date_edition': '23 avril 2024',
+//     'name': 'M’bra Oliver',
+//     'contact': '01 02 03 04 05',
+//     'price': '20 000',
+//     'dure': '2 mois',
+//     'contrat': 'Prêt entre amis',
+//     'paiement': '20 Juin 2024',
+//     'statut': 'Effectué',
+//   },
+// ];
