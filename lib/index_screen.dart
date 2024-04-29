@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:une_messe/core/constants.dart';
 
 import 'components/BottomNavigationWidget.dart';
+import 'home/fragments/demande_fragment.dart';
 import 'home/fragments/home_fragment.dart';
 
 class IndexScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _IndexScreenState extends State<IndexScreen> {
                 left: 0,
                 right: 0,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: PADDING*2),
+                  // padding: EdgeInsets.symmetric(horizontal: PADDING*2),
                   color: greenColor.withOpacity(0.15),
                   child: fragmentList[_selectedIndex]['fragment'],
                 )),
@@ -41,7 +42,7 @@ class _IndexScreenState extends State<IndexScreen> {
               left: 0,
               right: 0,
               child: Container(
-                color: Colors.white,
+                color: greenColor.withOpacity(0.1),
                 height: 60,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,9 +80,12 @@ final List<Map<String, dynamic>> fragmentList = [
     'fragment': const HomeFragment()
   },
   {
+    'fragment': const DemandeFragment(),
+  },
+  {
     'fragment': const Center(
       child: Text(
-        'Contenu de la Recherche',
+        'Contenu du panier',
         style: TextStyle(fontSize: 24.0),
       ),
     ),
@@ -89,15 +93,7 @@ final List<Map<String, dynamic>> fragmentList = [
   {
     'fragment': const Center(
       child: Text(
-        'Contenu des Notifications',
-        style: TextStyle(fontSize: 24.0),
-      ),
-    ),
-  },
-  {
-    'fragment': const Center(
-      child: Text(
-        'Contenu du Profil',
+        'Contenu du parametre',
         style: TextStyle(fontSize: 24.0),
       ),
     ),

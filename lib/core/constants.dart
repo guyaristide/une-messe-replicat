@@ -82,7 +82,7 @@ final List<Map<String, dynamic>> ButtomNavigationList = [
   {
     
     'label': 'PANIER',
-    'icon': Icons.person,
+    'icon': Icons.shopping_cart,
   },
   {
     
@@ -122,42 +122,37 @@ final List<Map<String, dynamic>> demandeList = [
  
 ];
 
-// final List<Map<String, dynamic>> historyList = [
-//  {
-//     'name': 'M’bra Oliver',
-//    'type': 'Prêt entre amis',
-//    'date': '20 Avr 2024 à 10h30s',
-//    'price': '20000',
-//   },
-//   {
-//     'name': 'Yaba Morelle',
-//     'type': 'Caution pour voiture',
-//    'date': '20 Avr 2024 à 10h30s',
-//    'price': '20000',
-//   },
-//   {
+final List<Map<String, dynamic>> egliseList = [
+ {
+  'eglise': 'Saint Jean-Baptiste',
+   'adresse': 'Abidjan Riviera Palmeraie',
+   'date':[
+    {'hour':'8:00'},
+    {'hour':'10:30'}
+   ],
+  },
+  {
+    'eglise': 'Notre Dame de l\'Incarnation',
+    'adresse': 'Morokro',
+    'date':[
+    {'hour':'6:30'},
+    {'hour':'8:00'},
+    {'hour':'9:30'},
+    {'hour':'11:00'},
+    {'hour':'19:00'},
+    ]
+  },
+  {
     
-//     'name': 'Boni Aristide',
-//     'type': 'Caution pour appartement',
-//    'date': '20 Avr 2024 à 10h30s',
-//    'price': '20000',
-//   },
-//   {
-    
-//     'name': 'Eric kouamé',
-//     'type': 'Prêt usurier',
-//    'date': '20 Avr 2024 à 10h30s',
-//    'price': '20000',
-//   },
-//   {
-    
-//     'name': 'Brice Diao',
-//     'type': 'Achat en plusieurs fois',
-//    'date': '20 Avr 2024 à 10h30s',
-//    'price': '20000',
-//   },
- 
-// ];
+    'eglise': 'Saint Ambroise Jubilé',
+    'adresse': 'Abidjan Angré',
+    'date':[
+    {'hour':'6:30'},
+    {'hour':'8:00'},
+    {'hour':'9:30',}
+    ]
+  },
+];
 
 
 // final List<Map<String, dynamic>> receipt = [

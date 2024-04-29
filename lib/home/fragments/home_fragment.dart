@@ -17,6 +17,7 @@ class _HomeFragmentState extends State<HomeFragment> {
     Size size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: PADDING*2),
       child: Column(
         children: [
           SizedBox(
