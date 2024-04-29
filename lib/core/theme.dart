@@ -60,32 +60,32 @@ import 'constants.dart';
     ),
     inputDecorationTheme: InputDecorationTheme(
      filled: true,
-            fillColor: Colors.grey.withOpacity(0.1),
-            contentPadding: const EdgeInsets.all(3.0).copyWith(left:15),
-            hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400),
-          // floatingLabelStyle: TextStyle(color: blackColor),
-          // labelStyle: TextStyle(color: blackColor, fontSize: 14),
+            fillColor: Colors.transparent,
+            contentPadding: const EdgeInsets.all(6),
+            hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400,),
+          floatingLabelStyle: TextStyle(color: greenColor, fontSize: 14),
+          labelStyle: TextStyle(color: greenColor, fontSize: 14),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none,
+            borderSide: const BorderSide(color: Colors.black45,width: 1),
           ),
           errorBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.red),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide:  BorderSide.none,
+            borderSide:  const BorderSide(color: Colors.black45,width: 1),
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide:  BorderSide.none,
+            borderSide:  const BorderSide(color: Colors.black45,width: 1),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: primaryColor, width: 1),
+            borderSide: BorderSide(color: greenColor, width: 2),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none,
+            borderSide:  BorderSide(color: greenColor,width: 2),
           ), 
         ),
         

@@ -70,7 +70,9 @@ class _DemandeFragmentState extends State<DemandeFragment> {
             return  InfosEgliseItemWidget(
             eglise: egliseList[index]['eglise'], 
             adresse: egliseList[index]['adresse'], 
-            dates: egliseList[index]['date'],);
+            hours: egliseList[index]['date'],
+            date: 'Dimanche 7 Avril',
+            );
           })
       ],
       ),

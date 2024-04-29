@@ -73,7 +73,7 @@ const String boxSettings = 'settings';
 final List<Map<String, dynamic>> ButtomNavigationList = [
   {
     'label': 'ACCUEIL',
-    'icon': Icons.home,
+    'icon': Icons.church,
   },
   {
     'label': 'DEMANDER',

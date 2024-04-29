@@ -1,10 +1,10 @@
-import 'dart:ffi';
+
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:simple_grid/simple_grid.dart';
 
 import '../core/constants.dart';
+import '../core/shared/modals.dart';
 
 // ignore: must_be_immutable
 class InfosEgliseItemWidget extends StatelessWidget {
@@ -12,11 +12,13 @@ class InfosEgliseItemWidget extends StatelessWidget {
       {super.key, 
       required this.eglise, 
       required this.adresse,
-      required this.dates,
+      required this.hours,
+      required this.date,
       });
   String eglise;
   String adresse;
-  List dates ;
+  List hours ;
+  String date ;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +77,7 @@ class InfosEgliseItemWidget extends StatelessWidget {
             runAlignment: WrapAlignment.start,
             children: [
               ...List.generate(
-                dates.length, 
+                hours.length, 
               (index) {
                 return   SpGridItem(
                 lg: 3,
@@ -83,15 +85,22 @@ class InfosEgliseItemWidget extends StatelessWidget {
                 xs: 4,
                 sm: 4,
                 child: GestureDetector(
-                  onTap: () {
-                    
+                  onTap: () async{
+                    await Modals.showModalDemandeMesse(
+                      context, 
+                      eglise: eglise, 
+                      adresse: adresse, 
+                      date: date, 
+                      hour: hours[index]['hour'],
+                      
+                    );
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: PADDING*1.5),
                     decoration: BoxDecoration(
                         color: greenColor.withOpacity(0.1),
                         borderRadius: BorderRadius.all(Radius.circular(RADIUS))),
-                        child: Text("${dates[index]['hour']}",
+                        child: Text("${hours[index]['hour']}",
                         style: TextStyle(fontWeight: FontWeight.bold,color: greenColor),
                         textAlign: TextAlign.center,),
                   ),
