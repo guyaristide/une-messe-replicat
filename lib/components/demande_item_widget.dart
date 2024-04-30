@@ -10,13 +10,17 @@ class DemandeItemWidget extends StatelessWidget {
     required this.communaute,
     required this.date,
     required this.motif,
-    required this.intention
+    required this.intention,
+    required this.backColor,
+    required this.fontColor,
   });
   String date;
   String communaute;
   String adresse;
   String motif;
   String intention;
+  dynamic backColor;
+  dynamic fontColor;
 
   @override
   Widget build(BuildContext context) {
@@ -81,9 +85,9 @@ class DemandeItemWidget extends StatelessWidget {
               topRight: Radius.circular(RADIUS*2),
               bottomRight: Radius.circular(RADIUS*2)
                       ),
-                      color: orangeColor,
+                      color: backColor,
                     ),
-                width: 110,
+                width: 130,
               ),
               Positioned(
                 left: 0,
@@ -97,7 +101,7 @@ class DemandeItemWidget extends StatelessWidget {
               topLeft: Radius.circular(RADIUS*6),
               bottomRight: Radius.circular(RADIUS*2)
                       ),
-                      color: primaryColor,
+                      color: fontColor,
                     ),
               ), 
                 )

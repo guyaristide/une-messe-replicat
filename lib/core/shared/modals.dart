@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'choice_offering.dart';
 import 'demande_messe.dart';
 
 class Modals {
@@ -23,6 +24,21 @@ class Modals {
           date: date, 
           hour: hour,
           // order: order
+          );
+      },
+    );
+  }
+
+
+  static Future<dynamic> showModalAddToCart(
+    BuildContext context,
+    // { }
+ ) {
+    return showCupertinoModalPopup(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return ChoiceOffering(
           );
       },
     );

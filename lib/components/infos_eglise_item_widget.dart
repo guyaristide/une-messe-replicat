@@ -80,10 +80,9 @@ class InfosEgliseItemWidget extends StatelessWidget {
                 hours.length, 
               (index) {
                 return   SpGridItem(
-                lg: 3,
-                md: 3,
+                md: 2,
+                sm: 3,
                 xs: 4,
-                sm: 4,
                 child: GestureDetector(
                   onTap: () async{
                     await Modals.showModalDemandeMesse(

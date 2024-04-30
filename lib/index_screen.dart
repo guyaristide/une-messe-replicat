@@ -45,7 +45,7 @@ class _IndexScreenState extends State<IndexScreen> {
                 color: greenColor.withOpacity(0.1),
                 height: 60,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ...ButtomNavigationList.asMap().entries.map((entry){
                       final index = entry.key;

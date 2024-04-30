@@ -61,7 +61,7 @@ import 'constants.dart';
     inputDecorationTheme: InputDecorationTheme(
      filled: true,
             fillColor: Colors.transparent,
-            contentPadding: const EdgeInsets.all(6),
+            contentPadding: const EdgeInsets.all(8.0),
             hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400,),
           floatingLabelStyle: TextStyle(color: greenColor, fontSize: 14),
           labelStyle: TextStyle(color: greenColor, fontSize: 14),

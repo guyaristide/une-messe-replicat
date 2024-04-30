@@ -64,6 +64,8 @@ MaterialColor blackColor = MaterialColor(0xFF33363F, swatchColor);
 Color greenColor = Color(0xFF43675F);
 Color orangeColor = Color(0xFFEC653C);
 Color yellowColor = Color(0xFFFDCF76);
+Color pinkColor = Color(0xFFF1AEC7);
+Color indigoColor = Color(0xFFA493C6);
 double PADDING = 10;
 double RADIUS = 12;
 const String boxSettings = 'settings';
@@ -77,7 +79,7 @@ final List<Map<String, dynamic>> ButtomNavigationList = [
   },
   {
     'label': 'DEMANDER',
-    'icon': Icons.search,
+    'icon': Icons.handshake_outlined,
   },
   {
     
@@ -122,6 +124,8 @@ final List<Map<String, dynamic>> demandeList = [
  
 ];
 
+
+
 final List<Map<String, dynamic>> egliseList = [
  {
   'eglise': 'Saint Jean-Baptiste',
@@ -155,15 +159,97 @@ final List<Map<String, dynamic>> egliseList = [
 ];
 
 
-// final List<Map<String, dynamic>> receipt = [
-//   {
-//     'date_edition': '23 avril 2024',
-//     'name': 'M’bra Oliver',
-//     'contact': '01 02 03 04 05',
-//     'price': '20 000',
-//     'dure': '2 mois',
-//     'contrat': 'Prêt entre amis',
-//     'paiement': '20 Juin 2024',
-//     'statut': 'Effectué',
-//   },
-// ];
+final List<Map<String, dynamic>> intentionCategories = [ 
+    {'value': 'Étudiant', "key": "STUDENT"},
+    {
+      'value': 'Action de grâce',
+      "key": "ACTION_GRACE"
+    },
+    {
+      'value': 'Repos de l’âme',
+      "key": "REPOS_AME"
+    },
+    {
+      'value': 'Assistance et Protection',
+      "key": "ASSISTANT_PROTECTION"
+    },
+    {
+      'value': 'Reveil Spirituel',
+      "key": "REVEIL_SPIRITUEL"
+    },
+    
+    
+  ];
+
+
+  final List<Map<String, dynamic>> colorItems = [ 
+    {'backColor': pinkColor,
+     "fontColor": indigoColor
+     },
+    {
+      'backColor': orangeColor,
+      "fontColor": primaryColor
+    },
+    {
+      'backColor': tertiairColor,
+      "fontColor": greenColor
+    },
+  ];
+  final List<Map<String, dynamic>> offeringItems = [ 
+
+    {'type': "Une Messe",
+     "price": "3.000"
+     },
+    {
+      'type': "Une Neuvaine (9 jours)",
+      "price": "27.000"
+    },
+    {
+      'type': "Un Trentain (30 jours)",
+      "price": "90.000"
+    },
+    {'type': "Une Messe",
+     "price": "3.000"
+     },
+    {
+      'type': "Une Neuvaine (9 jours)",
+      "price": "27.000"
+    },
+    {
+      'type': "Un Trentain (30 jours)",
+      "price": "90.000"
+    },
+    {'type': "Une Messe",
+     "price": "3.000"
+     },
+    {
+      'type': "Une Neuvaine (9 jours)",
+      "price": "27.000"
+    },
+    {
+      'type': "Un Trentain (30 jours)",
+      "price": "90.000"
+    },
+    {'type': "Une Messe",
+     "price": "3.000"
+     },
+    {
+      'type': "Une Neuvaine (9 jours)",
+      "price": "27.000"
+    },
+    {
+      'type': "Un Trentain (30 jours)",
+      "price": "90.000"
+    },
+    {'type': "Une Messe",
+     "price": "3.000"
+     },
+    {
+      'type': "Une Neuvaine (9 jours)",
+      "price": "27.000"
+    },
+    {
+      'type': "Un Trentain (30 jours)",
+      "price": "10.000"
+    },
+  ];

@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:simple_grid/simple_grid.dart';
 import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/components/demande_item_widget.dart';
 import 'package:une_messe/core/constants.dart';
@@ -113,16 +115,58 @@ class _HomeFragmentState extends State<HomeFragment> {
               scrollDirection: Axis.horizontal,
               itemCount: demandeList.length,
               itemBuilder: (context, i) {
+                 final itemColor = colorItems[i % colorItems.length];
                 return DemandeItemWidget(
                   adresse: demandeList[i]['adresse'],
                   communaute: demandeList[i]['communaute'],
                   date: demandeList[i]['date'],
                   motif: demandeList[i]['motif'],
                   intention: demandeList[i]['intention'],
+                   backColor: itemColor['backColor'], 
+                   fontColor: itemColor['fontColor'],
                 );
               },
             ),
           ),
+    //       Column(
+    //   mainAxisAlignment: MainAxisAlignment.center,
+    //   children: colorItems.map((item) {
+    //     return Stack(
+    //       children: [
+    //         Container(
+    //           decoration: BoxDecoration(
+    //             borderRadius: BorderRadius.only(
+    //               topRight: Radius.circular(20),
+    //               bottomRight: Radius.circular(20),
+    //             ),
+    //             color: item['backColor'],
+    //           ),
+    //           width: 110,
+    //           height: 100, // Ajuster la hauteur selon les besoins
+    //         ),
+    //         SizedBox(height: 20),
+    //         Positioned(
+    //           bottom: 0,
+    //           left: 0,
+    //           right: 0,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.only(
+    //                 topRight: Radius.circular(30),
+    //                 topLeft: Radius.circular(36),
+    //                 bottomRight: Radius.circular(20),
+    //               ),
+    //               color: item['fontColor'],
+    //             ),
+    //             width: 110,
+    //             height: 50,
+    //           ),
+    //         ),
+    //         SizedBox(height: 20),
+    //       ],
+    //     );
+    //   }).toList(),
+    // ),
           SizedBox(
             height: PADDING * 2,
           ),
@@ -137,87 +181,103 @@ class _HomeFragmentState extends State<HomeFragment> {
                     topRight: Radius.circular(RADIUS * 2))),
             child: Container(
               width: size.width,
-              padding: EdgeInsets.symmetric(horizontal:PADDING,vertical: PADDING*4),
+              // padding: EdgeInsets.symmetric(horizontal:PADDING,vertical: PADDING*4),
               decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(RADIUS * 10),
                       topRight: Radius.circular(RADIUS * 10))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: SpGrid(
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                crossAlignment: WrapCrossAlignment.center,
+                alignment: WrapAlignment.start,
+                runSpacing: PADDING*4,
+                spacing: PADDING*4,
+                padding: EdgeInsets.symmetric(vertical: PADDING*4),
                 children: [
                   
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/images/logo.png"),
-                      const SizedBox(
-                        width: 6,
-                      ),
-                      const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Une",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            "Messe",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: PADDING * 4,
-                  ),
-                  Text(
-                    "Une seule messe",
-                    style: TextStyle(color: yellowColor),
-                  ),
-                  const Text(
-                    "peut tout changer.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: PADDING * 4,
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: PADDING * 3, vertical: PADDING),
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(RADIUS * 2))),
-                    child: const Text(
-                      "Partager",
-                      style: TextStyle(color: Colors.white),
+                  SpGridItem(
+                xs: 12,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/images/logo.png"),
+                        const SizedBox(
+                          width: 6,
+                        ),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Une",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "Messe",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            )
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    height: PADDING * 4,
+                  SpGridItem(
+                    md: 4,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Une seule messe",
+                          style: TextStyle(color: yellowColor),
+                        ),
+                        const Text(
+                          "peut tout changer.",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.qr_code,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        "QR Code",
+                  
+                  SpGridItem(
+                    md: 4,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: PADDING * 3, vertical: PADDING),
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(RADIUS * 2))),
+                      child: const Text(
+                        "Partager",
                         style: TextStyle(color: Colors.white),
-                      )
-                    ],
-                  )
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  
+                   SpGridItem(
+                    md: 4,
+                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.qr_code,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          "QR Code",
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
+                                       ),
+                   )
                 ],
               ),
             ),
