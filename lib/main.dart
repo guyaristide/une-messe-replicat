@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Une messe',
       theme:baseTheme,
       debugShowCheckedModeBanner: false,
-      home: const IndexScreen(),
+      home:  IndexScreen(),
     );
   }
 }

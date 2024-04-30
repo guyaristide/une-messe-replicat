@@ -4,6 +4,7 @@ import 'package:une_messe/core/constants.dart';
 import 'components/BottomNavigationWidget.dart';
 import 'home/fragments/demande_fragment.dart';
 import 'home/fragments/home_fragment.dart';
+import 'home/fragments/shopping_fragment.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
@@ -83,17 +84,12 @@ final List<Map<String, dynamic>> fragmentList = [
     'fragment': const DemandeFragment(),
   },
   {
-    'fragment': const Center(
-      child: Text(
-        'Contenu du panier',
-        style: TextStyle(fontSize: 24.0),
-      ),
-    ),
+    'fragment': const ShoppingFragment(),
   },
   {
     'fragment': const Center(
       child: Text(
-        'Contenu du parametre',
+        'Contenu des parametres',
         style: TextStyle(fontSize: 24.0),
       ),
     ),

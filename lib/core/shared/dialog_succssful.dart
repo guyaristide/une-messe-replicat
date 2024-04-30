@@ -15,7 +15,7 @@ class DialogSuccessful extends StatelessWidget {
               ),
       contentPadding: EdgeInsets.zero,
       content: Container(
-        width: size.width*0.7,
+        // width: size.width*0.7,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(RADIUS * 20),

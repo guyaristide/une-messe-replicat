@@ -4,11 +4,10 @@ import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/core/constants.dart';
 
 import '../../components/offering_item_wiget.dart';
+import '../../index_screen.dart';
 import 'modals.dart';
 
 class ChoiceOffering extends StatefulWidget {
-  
-
   const ChoiceOffering({
     super.key,
   });
@@ -18,7 +17,6 @@ class ChoiceOffering extends StatefulWidget {
 }
 
 class _ChoiceOfferingState extends State<ChoiceOffering> {
-
   @override
   void dispose() {
     super.dispose();
@@ -41,8 +39,8 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
           child: Container(
             width: size.width,
             constraints: BoxConstraints(
-              minHeight: size.height / 1.3,
-              maxHeight: size.height / 1.1,
+              minHeight: size.height / 1.4,
+              maxHeight: size.height / 1.2,
             ),
             child: Container(
               decoration: ShapeDecoration(
@@ -70,15 +68,16 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                           Center(child: Image.asset("assets/images/hands-gesture.png")),
+                            Center(
+                                child: Image.asset(
+                                    "assets/images/hands-gesture.png")),
                             const SizedBox(
                               height: 8,
                             ),
                             const Text(
                               "Choisissez votre offrande",
                               style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -111,59 +110,52 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                       )
                     ],
                   ),
-                     Expanded(
+                  Expanded(
                       child: Container(
-                      color: greenColor.withOpacity(0.15),
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: offeringItems.length,
-                          itemBuilder: (
-                             context,  e) { 
-                          return OfferingItemWidget(
-                            type: offeringItems[e]['type'], 
-                            price: offeringItems[e]['price'],
-                            );
-                                             
-                           },
-                        
-                        ),
-                      )),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: PADDING*2),
-                        height: 150,
-                        child:  Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    color: greenColor.withOpacity(0.15),
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: offeringItems.length,
+                      itemBuilder: (context, e) {
+                        return OfferingItemWidget(
+                          type: offeringItems[e]['type'],
+                          price: offeringItems[e]['price'],
+                        );
+                      },
+                    ),
+                  )),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: PADDING * 2),
+                    height: 150,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                             const Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Offrande",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14
-                                ),
-                                ),
-                                
-                                Text("3000 CFA",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14
-                                ),
-                                ),
-                                
-                              ],
+                            Text(
+                              "Offrande",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14),
                             ),
-                            AppButtomWidget(
-                              label: "Ajouter au panier",
-                               press: () async{ 
-                                Navigator.pop(context);
-                                await Modals.showModalAddAdresse(context);
-                                },)
+                            Text(
+                              "0 CFA",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14),
+                            ),
                           ],
                         ),
-                      )
-                    ],
+                        AppButtomWidget(
+                          label: "Ajouter au panier",
+                          press: () {
+                            
+                          },
+                        )
+                      ],
+                    ),
+                  )
+                ],
               ),
             ),
           ),
@@ -172,4 +164,3 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
     );
   }
 }
-

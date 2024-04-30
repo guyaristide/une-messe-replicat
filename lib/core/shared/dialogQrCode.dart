@@ -57,7 +57,7 @@ class DialogQrCode extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: PADDING * 3,
+                height: PADDING * 2,
               ),
               AppButtomWidget(
                   press: () {
