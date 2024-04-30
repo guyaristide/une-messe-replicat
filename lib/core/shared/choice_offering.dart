@@ -4,6 +4,7 @@ import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/core/constants.dart';
 
 import '../../components/offering_item_wiget.dart';
+import 'modals.dart';
 
 class ChoiceOffering extends StatefulWidget {
   
@@ -155,7 +156,10 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                             ),
                             AppButtomWidget(
                               label: "Ajouter au panier",
-                               press: () {  },)
+                               press: () async{ 
+                                Navigator.pop(context);
+                                await Modals.showModalAddAdresse(context);
+                                },)
                           ],
                         ),
                       )

@@ -6,6 +6,8 @@ import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/components/demande_item_widget.dart';
 import 'package:une_messe/core/constants.dart';
 
+import '../../core/shared/modals.dart';
+
 class HomeFragment extends StatefulWidget {
   const HomeFragment({super.key});
 
@@ -128,45 +130,6 @@ class _HomeFragmentState extends State<HomeFragment> {
               },
             ),
           ),
-    //       Column(
-    //   mainAxisAlignment: MainAxisAlignment.center,
-    //   children: colorItems.map((item) {
-    //     return Stack(
-    //       children: [
-    //         Container(
-    //           decoration: BoxDecoration(
-    //             borderRadius: BorderRadius.only(
-    //               topRight: Radius.circular(20),
-    //               bottomRight: Radius.circular(20),
-    //             ),
-    //             color: item['backColor'],
-    //           ),
-    //           width: 110,
-    //           height: 100, // Ajuster la hauteur selon les besoins
-    //         ),
-    //         SizedBox(height: 20),
-    //         Positioned(
-    //           bottom: 0,
-    //           left: 0,
-    //           right: 0,
-    //           child: Container(
-    //             decoration: BoxDecoration(
-    //               borderRadius: BorderRadius.only(
-    //                 topRight: Radius.circular(30),
-    //                 topLeft: Radius.circular(36),
-    //                 bottomRight: Radius.circular(20),
-    //               ),
-    //               color: item['fontColor'],
-    //             ),
-    //             width: 110,
-    //             height: 50,
-    //           ),
-    //         ),
-    //         SizedBox(height: 20),
-    //       ],
-    //     );
-    //   }).toList(),
-    // ),
           SizedBox(
             height: PADDING * 2,
           ),
@@ -258,25 +221,30 @@ class _HomeFragmentState extends State<HomeFragment> {
                     ),
                   ),
                   
-                   SpGridItem(
+                    SpGridItem(
                     md: 4,
-                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.qr_code,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
-                          "QR Code",
-                          style: TextStyle(color: Colors.white),
-                        )
-                      ],
-                                       ),
+                     child: GestureDetector(
+                      onTap: () async{
+                        await Modals.showModalQrcode(context);
+                      },
+                       child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.qr_code,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            "QR Code",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
+                                         ),
+                     ),
                    )
                 ],
               ),

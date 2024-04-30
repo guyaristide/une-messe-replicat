@@ -157,13 +157,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                   SizedBox(
                                     height: PADDING * 2,
                                   ),
-                                  Formfield(
-                                    labelText: "Par l’intercession de",
-                                    hintText: 'Par l’intercession de',
-                                  ),
-                                  SizedBox(
-                                    height: PADDING * 2,
-                                  ),
+                                 
                                   DropdownButtonFormField<Map<String, dynamic>>(
                                       decoration: InputDecoration(
                                         floatingLabelStyle: TextStyle(
@@ -200,10 +194,17 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                   SizedBox(
                                     height: PADDING * 2,
                                   ),
+                                   Formfield(
+                                    labelText: "Par l’intercession de",
+                                    hintText: 'Par l’intercession de',
+                                  ),
+                                  SizedBox(
+                                    height: PADDING * 2,
+                                  ),
                                   Formfield(
                                     maxline: 4,
                                     labelText: "Motif de l’Intention",
-                                    hintText: 'Motif de l’Intention',
+                                    hintText: 'Pour...',
                                   ),
                                   SizedBox(
                                     height: PADDING * 2,

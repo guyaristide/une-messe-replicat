@@ -61,11 +61,12 @@ MaterialColor primaryColor = MaterialColor(0xFFB24F44, color0);
 MaterialColor secondaryColor = MaterialColor(0xFF33363F, color1);
 MaterialColor tertiairColor = MaterialColor(0xFFEAC1A2, color2);
 MaterialColor blackColor = MaterialColor(0xFF33363F, swatchColor);
-Color greenColor = Color(0xFF43675F);
-Color orangeColor = Color(0xFFEC653C);
-Color yellowColor = Color(0xFFFDCF76);
-Color pinkColor = Color(0xFFF1AEC7);
-Color indigoColor = Color(0xFFA493C6);
+Color greenColor = const Color(0xFF43675F);
+Color orangeColor = const Color(0xFFEC653C);
+Color yellowColor = const Color(0xFFFDCF76);
+Color pinkColor = const Color(0xFFF1AEC7);
+Color indigoColor = const Color(0xFFA493C6);
+Color LightndigoColor = const Color(0xFF55448B);
 double PADDING = 10;
 double RADIUS = 12;
 const String boxSettings = 'settings';
@@ -107,6 +108,13 @@ final List<Map<String, dynamic>> demandeList = [
     'intention': 'Repos de l’âme',
     'motif': 'Pour le bien-aimé Alfred',
   },
+   {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Notre Dame des Apotre',
+    'adresse': 'Divo',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
+  },
   {
     'date': 'VEN. 5 AVRIL - 19H',
     'communaute': 'Saint Jean-Baptiste',
@@ -121,6 +129,7 @@ final List<Map<String, dynamic>> demandeList = [
     'intention': 'Action de grâce',
     'motif': 'Pour l’anniversaire de mes petits enfants Franck et Lise',
   },
+ 
  
 ];
 

@@ -5,6 +5,7 @@ import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/core/constants.dart';
 
 import '../../components/formfield.dart';
+import 'modals.dart';
 
 class AddAdresse extends StatefulWidget {
   
@@ -42,8 +43,8 @@ class _AddAdresseState extends State<AddAdresse> {
           child: Container(
             width: size.width,
             constraints: BoxConstraints(
-              minHeight: size.height / 1.7,
-              maxHeight: size.height / 1.5,
+              minHeight: size.height / 1.4,
+              maxHeight: size.height / 1.3,
             ),
             child: Container(
               decoration: ShapeDecoration(
@@ -173,7 +174,10 @@ class _AddAdresseState extends State<AddAdresse> {
                                SpGridItem(
                                  child: AppButtomWidget(
                                   label: "Confirmer",
-                                   press: () {  },),
+                                   press: () async{ 
+                                    Navigator.pop(context);
+                                    await Modals.showModalSuccessful(context);
+                                    },),
                                )
                             ],
                           ),
