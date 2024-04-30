@@ -92,7 +92,7 @@ class InfosEgliseItemWidget extends StatelessWidget {
                       date: date, 
                       hour: hours[index]['hour'],
                       
-                    // );
+                    );
                     // Modals.showModalAddAdresse(context);
                   },
                   child: Container(
