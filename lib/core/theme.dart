@@ -64,7 +64,7 @@ import 'constants.dart';
             contentPadding: const EdgeInsets.all(8.0),
             hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400,),
           floatingLabelStyle: TextStyle(color: greenColor, fontSize: 14),
-          labelStyle: TextStyle(color: greenColor, fontSize: 14),
+          labelStyle: TextStyle(color: greenColor, fontSize: 14,fontWeight: FontWeight.w500,),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(color: Colors.black45,width: 1),

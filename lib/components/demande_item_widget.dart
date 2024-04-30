@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../core/constants.dart';
+import 'items/customTooltip.dart';
 
 // ignore: must_be_immutable
 class DemandeItemWidget extends StatelessWidget {
@@ -25,45 +27,75 @@ class DemandeItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right:PADDING*2),
+      margin: EdgeInsets.only(right:PADDING),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(RADIUS*2)),
         color: Colors.white,
       ),
       child: Row(
         children: [
-          Padding(
+          Container(
+            width: 260,
             padding:  EdgeInsets.all(PADDING*2),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("${date}",style: TextStyle(
+                Text("${date}",
+                 maxLines: 1,
+                 overflow: TextOverflow.ellipsis,
+                style: TextStyle(
                   color: primaryColor,
                   fontWeight: FontWeight.bold
                 ),),
                 const SizedBox(
                   height: 4,
                 ),
-                Text("${communaute}",style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold
-                ),),
-                Text("${adresse}",style: const TextStyle(
-                  color: Colors.grey
-                ),),
+                CustomTooltip(
+                  message: '${communaute}',
+                  child: Text("${communaute}",
+                   maxLines: 1,
+                   overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold
+                  ),),
+                ),
+                CustomTooltip(
+                  message: '${adresse}',
+                  textColor: Colors.grey,
+                  child: Text("${adresse}",
+                   maxLines: 1,
+                   overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.grey
+                  ),),
+                ),
             const SizedBox(height: 20,),
-                Text("${intention}",style: TextStyle(
-                  color: primaryColor,
-                  fontWeight: FontWeight.bold
-                ),),
+                CustomTooltip(
+                  message: '${intention}',
+                  textColor: primaryColor,
+                  child: Text("${intention}",
+                   maxLines: 1,
+                   overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: primaryColor,
+                    fontWeight: FontWeight.bold
+                  ),),
+                ),
                 const SizedBox(
                   height: 4,
                 ),
-                Text("${motif}",style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold
-                ),),
+                CustomTooltip(
+                  message: '${motif}',
+                  child: Text("${motif}",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Color(0xFF000000),
+                    fontWeight: FontWeight.bold
+                  ),),
+                ),
                 const SizedBox(height: 20,),
                 Row(children: [
                   Icon(Icons.share,color: greenColor,size: 20,),
@@ -98,7 +130,7 @@ class DemandeItemWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
               topRight: Radius.circular(RADIUS*5),
-              topLeft: Radius.circular(RADIUS*6),
+              topLeft: Radius.circular(RADIUS*7),
               bottomRight: Radius.circular(RADIUS*2)
                       ),
                       color: fontColor,

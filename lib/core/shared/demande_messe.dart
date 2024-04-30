@@ -164,54 +164,39 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                   SizedBox(
                                     height: PADDING * 2,
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(horizontal:8),
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(8)),
-                                      border: Border.all(
-                                          color: Colors.black45, width: 1),
-                                    ),
-                                    child: DropdownButton(
-                                        isExpanded: true,
-                                        hint:  Text(
-                                          "Choisissez une intention",
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                            color: greenColor
-                                          ),
-                                        ),
-                                        underline: const SizedBox(),
-                                        value: selectedIntentionCategory,
-                                        items: intentionCategories
-                                            .map((Map<String, dynamic> value) {
-                                          return DropdownMenuItem<
-                                              Map<String, dynamic>>(
-                                            value: value,
-                                            child: Container(
-                                              padding: EdgeInsets.symmetric(
-                                                  vertical: 8),
-                                              child: Text(
-                                                value['value'],
-                                                maxLines: 2,
-                                                style: const TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w500,
-                                                    ),
-                                                selectionColor: greenColor,
+                                  DropdownButtonFormField<Map<String, dynamic>>(
+                                      decoration: InputDecoration(
+                                        floatingLabelStyle: TextStyle(
+                                            color: greenColor, fontSize: 14),
+                                        labelStyle: TextStyle(
+                                            color: greenColor, fontSize: 14,fontWeight: FontWeight.w500,),
+                                        labelText: 'Choisissez une intention',
+                                        border: OutlineInputBorder(),
+                                      ),
+                                      value: selectedIntentionCategory,
+                                      items: intentionCategories
+                                          .map((Map<String, dynamic> value) {
+                                        return DropdownMenuItem<
+                                            Map<String, dynamic>>(
+                                          value: value,
+                                          child: Text(
+                                              value['value'],
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                                color: blackColor,
                                               ),
                                             ),
-                                          );
-                                        }).toList(),
-                                        onChanged:
-                                            (Map<String, dynamic>? newValue) {
-                                          setState(() {
-                                            selectedIntentionCategory =
-                                                newValue;
-                                          });
-                                        }),
-                                  ),
+                                        );
+                                      }).toList(),
+                                      onChanged:
+                                          (Map<String, dynamic>? newValue) {
+                                        setState(() {
+                                          selectedIntentionCategory = newValue;
+                                        });
+                                      }),
                                   SizedBox(
                                     height: PADDING * 2,
                                   ),
@@ -224,11 +209,11 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                     height: PADDING * 2,
                                   ),
                                   AppButtomWidget(
-                                    press: ()async{
-                                      Navigator.pop(context);
-                                      Modals.showModalAddToCart(context);
-                                    }, 
-                                    label: "Envoyer la demande de messe")
+                                      press: () async {
+                                        Navigator.pop(context);
+                                        Modals.showModalChoiceOffering(context);
+                                      },
+                                      label: "Envoyer la demande de messe")
                                 ],
                               )),
                             ],

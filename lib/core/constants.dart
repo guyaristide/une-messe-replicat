@@ -119,7 +119,7 @@ final List<Map<String, dynamic>> demandeList = [
     'communaute': 'Saint Jean-Baptiste',
     'adresse': 'Morokro',
     'intention': 'Action de grâce',
-    'motif': 'Pour l’anniversaire Franck et Lise',
+    'motif': 'Pour l’anniversaire de mes petits enfants Franck et Lise',
   },
  
 ];
@@ -180,11 +180,32 @@ final List<Map<String, dynamic>> intentionCategories = [
     
     
   ];
+final List<Map<String, dynamic>> indicatifContries = [ 
+    {'value': '+225', "key": ""},
+    {
+      'value': '+237',
+      "key": ""
+    },
+    {
+      'value': '+224',
+      "key": ""
+    },
+    {
+      'value': '+228',
+      "key": ""
+    },
+    {
+      'value': '+242',
+      "key": ""
+    },
+    
+    
+  ];
 
 
   final List<Map<String, dynamic>> colorItems = [ 
-    {'backColor': pinkColor,
-     "fontColor": indigoColor
+    {'backColor': indigoColor,
+     "fontColor": pinkColor
      },
     {
       'backColor': orangeColor,
@@ -207,49 +228,5 @@ final List<Map<String, dynamic>> intentionCategories = [
     {
       'type': "Un Trentain (30 jours)",
       "price": "90.000"
-    },
-    {'type': "Une Messe",
-     "price": "3.000"
-     },
-    {
-      'type': "Une Neuvaine (9 jours)",
-      "price": "27.000"
-    },
-    {
-      'type': "Un Trentain (30 jours)",
-      "price": "90.000"
-    },
-    {'type': "Une Messe",
-     "price": "3.000"
-     },
-    {
-      'type': "Une Neuvaine (9 jours)",
-      "price": "27.000"
-    },
-    {
-      'type': "Un Trentain (30 jours)",
-      "price": "90.000"
-    },
-    {'type': "Une Messe",
-     "price": "3.000"
-     },
-    {
-      'type': "Une Neuvaine (9 jours)",
-      "price": "27.000"
-    },
-    {
-      'type': "Un Trentain (30 jours)",
-      "price": "90.000"
-    },
-    {'type': "Une Messe",
-     "price": "3.000"
-     },
-    {
-      'type': "Une Neuvaine (9 jours)",
-      "price": "27.000"
-    },
-    {
-      'type': "Un Trentain (30 jours)",
-      "price": "10.000"
     },
   ];

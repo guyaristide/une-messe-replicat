@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'add_adresse.dart';
 import 'choice_offering.dart';
 import 'demande_messe.dart';
 
@@ -30,7 +31,7 @@ class Modals {
   }
 
 
-  static Future<dynamic> showModalAddToCart(
+  static Future<dynamic> showModalChoiceOffering(
     BuildContext context,
     // { }
  ) {
@@ -39,6 +40,19 @@ class Modals {
       barrierDismissible: true,
       builder: (BuildContext context) {
         return ChoiceOffering(
+          );
+      },
+    );
+  }
+  static Future<dynamic> showModalAddAdresse(
+    BuildContext context,
+    // { }
+ ) {
+    return showCupertinoModalPopup(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AddAdresse(
           );
       },
     );
