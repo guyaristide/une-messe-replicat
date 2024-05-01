@@ -7,7 +7,7 @@ class DialogSuccessful extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return AlertDialog(
       backgroundColor: indigoColor, 
       shape: RoundedRectangleBorder(

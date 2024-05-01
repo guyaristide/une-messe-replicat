@@ -21,7 +21,7 @@ class AppButtomWidget extends StatelessWidget {
        onTap: press,
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(vertical: PADDING*1.5),
+        padding: EdgeInsets.symmetric(vertical: PADDING*1.2),
         decoration: BoxDecoration(
           borderRadius:  BorderRadius.all(Radius.circular(RADIUS*2)),
           color: buttomColor,

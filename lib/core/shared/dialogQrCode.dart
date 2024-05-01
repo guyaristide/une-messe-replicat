@@ -9,12 +9,12 @@ class DialogQrCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return AlertDialog(
       backgroundColor: Colors.white,
       contentPadding: EdgeInsets.zero,
       content: Container(
-        width: size.width * 0.7,
+        // width: size.width * 0.7,
          decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(RADIUS * 2)
           ),

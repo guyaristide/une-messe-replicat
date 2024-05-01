@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/core/constants.dart';
 
@@ -79,11 +78,11 @@ class _DemandeMesseState extends State<DemandeMesse> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.church,
                               color: Colors.white,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -95,7 +94,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                             ),
                             Text(
                               "${widget.adresse}",
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             )
                           ],
                         ),
@@ -118,7 +117,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.close,
                                 color: Colors.white,
                               ),
@@ -138,12 +137,12 @@ class _DemandeMesseState extends State<DemandeMesse> {
                               Text(
                                 "${widget.date}",
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 "${widget.hour}",
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
                               SizedBox(height: PADDING * 2),
@@ -165,7 +164,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                         labelStyle: TextStyle(
                                             color: greenColor, fontSize: 14,fontWeight: FontWeight.w500,),
                                         labelText: 'Choisissez une intention',
-                                        border: OutlineInputBorder(),
+                                        border: const OutlineInputBorder(),
                                       ),
                                       value: selectedIntentionCategory,
                                       items: intentionCategories

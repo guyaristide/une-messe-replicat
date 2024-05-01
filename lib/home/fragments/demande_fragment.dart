@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:intl/intl.dart';
 import 'package:une_messe/core/constants.dart';
 
 import '../../components/infos_eglise_item_widget.dart';
+import '../../components/items/weekDays.dart';
 
 class DemandeFragment extends StatefulWidget {
   const DemandeFragment({super.key});
@@ -12,19 +15,19 @@ class DemandeFragment extends StatefulWidget {
 }
 
 class _DemandeFragmentState extends State<DemandeFragment> {
+  DateTime _selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
-    
       child: Column(
         children: [
           SizedBox(
             height: PADDING,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: PADDING*2),
+            padding: EdgeInsets.symmetric(horizontal: PADDING * 2),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,21 +66,92 @@ class _DemandeFragmentState extends State<DemandeFragment> {
           SizedBox(
             height: PADDING * 2,
           ),
+          Container(
+            decoration: BoxDecoration(
+            color: Colors.white,
+              border: Border(
+            bottom: BorderSide(color: Colors.black12)
+          )
+            ),
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: SizedBox(
+            height: 72,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: buildWeekDays(),
+            ),
+          ),
+                  ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      _selectDate(context);
+                      setState(() {
+                        _selectedDate != null
+                            ? '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}'
+                            : '';
+                      });
+                    },
+                    child:  Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.calendar_month,color: greenColor,),
+                        Icon(Icons.keyboard_arrow_down,color: greenColor,)
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // SizedBox(
+          //   height: PADDING * 2,
+          // ),
+          // Text(
+          //   'Semaine du ${DateFormat('dd/MM/yyyy').format(DateTime.now())}',
+          //   style: TextStyle(fontSize: 20),
+          // ),
         
-         ...List.generate(
-          egliseList.length, 
-          (index) {
-            return  InfosEgliseItemWidget(
-            eglise: egliseList[index]['eglise'], 
-            adresse: egliseList[index]['adresse'], 
-            hours: egliseList[index]['date'],
-            date: 'Dimanche 7 Avril',
+          // SizedBox(
+          //   height: PADDING,
+          // ),
+          // Text("la date Sélectionnée est : ${_selectedDate} "),
+
+          
+          // SizedBox(
+          //   height: PADDING * 2,
+          // ),
+          ...List.generate(egliseList.length, (index) {
+            return InfosEgliseItemWidget(
+              eglise: egliseList[index]['eglise'],
+              adresse: egliseList[index]['adresse'],
+              hours: egliseList[index]['date'],
+              date: 'Dimanche 7 Avril',
             );
           })
-      ],
+        ],
       ),
     );
   }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2030),
+    );
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+      });
+    }
+  }
+
+ 
 }
-
-
