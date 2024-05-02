@@ -144,14 +144,16 @@ class _AddAdresseState extends State<AddAdresse> {
                                 items: indicatifContries.map((Map<String, dynamic> value) {
                                   return DropdownMenuItem<Map<String, dynamic>>(
                                     value: value,
-                                    child: Text(value['value'],
-                                     maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                style:  TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: blackColor,
-                                                    ),
+                                    child: Center(
+                                      child: Text(value['value'],
+                                       maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  style:  TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight: FontWeight.w500,
+                                                      color: blackColor,
+                                                      ),
+                                      ),
                                     ),
                                   );
                                 }).toList(),
