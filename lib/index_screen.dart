@@ -88,10 +88,7 @@ final List<Map<String, dynamic>> fragmentList = [
   },
   {
     'fragment': const Center(
-      child: Text(
-        'Contenu des parametres',
-        style: TextStyle(fontSize: 24.0),
-      ),
+      child: Icon(Icons.settings,size:40)
     ),
   },
 ];

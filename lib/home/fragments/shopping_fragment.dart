@@ -65,10 +65,7 @@ class _ShoppingFragmentState extends State<ShoppingFragment> {
               SizedBox(
                 height: PADDING * 10,
               ),
-              Text(
-                'Contenu du panier',
-                style: TextStyle(fontSize: 24.0),
-              ),
+              Icon(Icons.shopping_cart,size:40)
               
             ],
           ),
