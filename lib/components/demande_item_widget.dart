@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../core/constants.dart';
 import 'items/customTooltip.dart';
+import 'items/app_item_card_widget.dart';
 
 // ignore: must_be_immutable
 class DemandeItemWidget extends StatelessWidget {
@@ -13,134 +14,90 @@ class DemandeItemWidget extends StatelessWidget {
     required this.date,
     required this.motif,
     required this.intention,
-    required this.backColor,
-    required this.fontColor,
+    required this.indexItemColor,
   });
   String date;
   String communaute;
   String adresse;
   String motif;
   String intention;
-  dynamic backColor;
-  dynamic fontColor;
+  int indexItemColor ;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(right:PADDING),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(RADIUS*2)),
-        color: Colors.white,
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 260,
-            padding:  EdgeInsets.all(PADDING*2),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("${date}",
-                 maxLines: 1,
-                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: primaryColor,
-                  fontWeight: FontWeight.bold
-                ),),
-                const SizedBox(
-                  height: 4,
-                ),
-                CustomTooltip(
-                  message: '${communaute}',
-                  child: Text("${communaute}",
-                   maxLines: 1,
-                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold
-                  ),),
-                ),
-                CustomTooltip(
-                  message: '${adresse}',
-                  textColor: Colors.grey,
-                  child: Text("${adresse}",
-                   maxLines: 1,
-                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.grey
-                  ),),
-                ),
-            const SizedBox(height: 20,),
-                CustomTooltip(
-                  message: '${intention}',
-                  textColor: primaryColor,
-                  child: Text("${intention}",
+    return AppItemCardWidget(
+      indexItemColor: indexItemColor,
+      listWidgets: [
+        Text("${date}",
                    maxLines: 1,
                    overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: primaryColor,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12
                   ),),
-                ),
-                const SizedBox(
-                  height: 4,
-                ),
-                CustomTooltip(
-                  message: '${motif}',
-                  child: Text("${motif}",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Color(0xFF000000),
-                    fontWeight: FontWeight.bold
-                  ),),
-                ),
-                const SizedBox(height: 20,),
-                Row(children: [
-                  Icon(Icons.share,color: greenColor,size: 20,),
                   const SizedBox(
-                    width: 8,
+                    height: 1,
                   ),
-                  Text("PARTAGER LA CARTE ",
-                  style: TextStyle(color: greenColor,fontWeight: FontWeight.bold,fontSize: 12),)
-                ],)
-              ],
-            ),
-          ),
-
-          Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-              topRight: Radius.circular(RADIUS*2),
-              bottomRight: Radius.circular(RADIUS*2)
-                      ),
-                      color: backColor,
+                  CustomTooltip(
+                    message: '${communaute}',
+                    child: Text("${communaute}",
+                     maxLines: 1,
+                     overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                    ),),
+                  ),
+                  CustomTooltip(
+                    message: '${adresse}',
+                    textColor: Colors.grey,
+                    child: Text("${adresse}",
+                     maxLines: 1,
+                     overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12
+                    ),),
+                  ),
+              const SizedBox(height: 6,),
+                  CustomTooltip(
+                    message: '${intention}',
+                    textColor: primaryColor,
+                    child: Text("${intention}",
+                     maxLines: 1,
+                     overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                    ),),
+                  ),
+                  const SizedBox(
+                    height: 1,
+                  ),
+                  CustomTooltip(
+                    message: '${motif}',
+                    child: Text("${motif}",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: Color(0xFF000000),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                    ),),
+                  ),
+                  const SizedBox(height: 6,),
+                  Row(children: [
+                    Icon(Icons.share,color: greenColor,size: 16,),
+                    const SizedBox(
+                      width: 8,
                     ),
-                width: 130,
-              ),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
-                top: 20,
-                child: Container(
-                decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-              topRight: Radius.circular(RADIUS*5),
-              topLeft: Radius.circular(RADIUS*7),
-              bottomRight: Radius.circular(RADIUS*2)
-                      ),
-                      color: fontColor,
-                    ),
-              ), 
-                )
-            ],
-          )
-        ],
-      ),
-    );
+                    Text("PARTAGER LA CARTE ",
+                    style: TextStyle(color: greenColor,fontWeight: FontWeight.bold,fontSize: 12),)
+                  ],)
+      ],
+      );
   }
 }

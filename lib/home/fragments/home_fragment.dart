@@ -24,46 +24,6 @@ class _HomeFragmentState extends State<HomeFragment> {
       padding: EdgeInsets.symmetric(horizontal: PADDING*2),
       child: Column(
         children: [
-          SizedBox(
-            height: PADDING,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset("assets/images/Bienvenue👋🏾.png"),
-              Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Container(
-                        padding: EdgeInsets.all(PADDING * 1.5),
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(RADIUS))),
-                        child: const Icon(
-                          Icons.shopping_cart,
-                          color: Colors.white,
-                        )),
-                  ),
-                  Positioned(
-                      left: 0,
-                      bottom: 0,
-                      child: CircleAvatar(
-                        backgroundColor: primaryColor,
-                        child: const Text(
-                          "0",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
-                        ),
-                      ))
-                ],
-              )
-            ],
-          ),
-          SizedBox(
-            height: PADDING * 2,
-          ),
           Container(
             width: size.width,
             padding: EdgeInsets.all(PADDING * 2),
@@ -112,20 +72,22 @@ class _HomeFragmentState extends State<HomeFragment> {
             height: PADDING * 2,
           ),
           SizedBox(
-            height: 220,
+            height: 160,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: demandeList.length,
               itemBuilder: (context, i) {
-                 final itemColor = colorItems[i % colorItems.length];
-                return DemandeItemWidget(
-                  adresse: demandeList[i]['adresse'],
-                  communaute: demandeList[i]['communaute'],
-                  date: demandeList[i]['date'],
-                  motif: demandeList[i]['motif'],
-                  intention: demandeList[i]['intention'],
-                   backColor: itemColor['backColor'], 
-                   fontColor: itemColor['fontColor'],
+                var item = demandeList[i];
+                return Padding(
+                  padding:  EdgeInsets.only(right:PADDING),
+                  child: DemandeItemWidget(
+                    adresse: item['adresse'],
+                    communaute: item['communaute'],
+                    date: item['date'],
+                    motif: item['motif'],
+                    intention: item['intention'], 
+                    indexItemColor: i,
+                  ),
                 );
               },
             ),
@@ -255,3 +217,5 @@ class _HomeFragmentState extends State<HomeFragment> {
     );
   }
 }
+
+

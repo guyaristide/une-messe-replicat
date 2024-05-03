@@ -115,9 +115,10 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                       scrollDirection: Axis.vertical,
                       itemCount: offeringItems.length,
                       itemBuilder: (context, e) {
+                        var item = offeringItems[e];
                         return OfferingItemWidget(
-                          type: offeringItems[e]['type'],
-                          price: offeringItems[e]['price'],
+                          type: item['type'],
+                          price: item['price'],
                         );
                       },
                     ),

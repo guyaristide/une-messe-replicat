@@ -20,9 +20,16 @@ class _CalendarWidgetState extends State<CalendarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return 
+    return Column(
+      children: [
+          Text("date Sélectionnée : ${_selectedDate} ",
+          style: TextStyle(fontSize: 16),
+          textAlign: TextAlign.center,
+          ),
           
-       
+        SizedBox(
+            height: PADDING * 2,
+          ),
         Container(
           decoration: const BoxDecoration(
               color: Colors.white,
@@ -67,7 +74,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               ),
             ],
           ),
-      
+        ),
+      ],
     );
   }
 

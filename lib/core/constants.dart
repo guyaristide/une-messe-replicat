@@ -93,6 +93,63 @@ final List<Map<String, dynamic>> ButtomNavigationList = [
     'icon': Icons.settings,
   },
 ];
+
+
+
+final List<Map<String, dynamic>> shoppingItemList = [
+  {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Saint Jean-Baptiste',
+    'adresse': 'Morokro',
+    'name': 'famille kouadio',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire Franck et Lise',
+  },
+  {
+    'date': 'SAM. 6 AVRIL - 19H',
+    'communaute': 'Notre Dame de l’Incarnation',
+    'adresse': 'Abidjan Riviera Palmeraie',
+    'name': 'Saint Joseph',
+    'intention': 'Repos de l’âme',
+    'motif': 'Pour le bien-aimé Alfred',
+  },
+   {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Notre Dame des Apotre',
+    'adresse': 'Divo',
+    'name': 'Maryline n\'Dri',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
+  },
+   {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Notre Dame des Apotre',
+    'adresse': 'Divo',
+    'name': 'Maryline n\'Dri',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
+  },
+   {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Notre Dame des Apotre',
+    'adresse': 'Divo',
+    'name': 'Maryline n\'Dri',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
+  },
+   {
+    'date': 'DIM. 7 AVRIL - 11H',
+    'communaute': 'Notre Dame des Apotre',
+    'adresse': 'Divo',
+    'name': 'Maryline n\'Dri',
+    'intention': 'Action de grâce',
+    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
+  },
+ 
+ 
+];
+
+
 final List<Map<String, dynamic>> demandeList = [
   {
     'date': 'DIM. 7 AVRIL - 11H',
