@@ -55,18 +55,100 @@ Map<int, Color> color2 = {
   800: const Color.fromRGBO(234, 193, 162, .9),
   900: const Color.fromRGBO(234, 193, 162, 1),
 };
+// 0xFF43675F #43675F
+Map<int, Color> color3 = { 
+  50: const Color.fromRGBO(67, 103, 95, .1),
+  100: const Color.fromRGBO(67, 103, 95, .2),
+  200: const Color.fromRGBO(67, 103, 95, .3),
+  300: const Color.fromRGBO(67, 103, 95, .4),
+  400: const Color.fromRGBO(67, 103, 95, .5),
+  500: const Color.fromRGBO(67, 103, 95, .6),
+  600: const Color.fromRGBO(67, 103, 95, .7),
+  700: const Color.fromRGBO(67, 103, 95, .8),
+  800: const Color.fromRGBO(67, 103, 95, .9),
+  900: const Color.fromRGBO(67, 103, 95, 1),
+};
+// 0xFFEC653C #EC653C
+Map<int, Color> color4 = {
+  50: const Color.fromRGBO(236, 101, 60, .1),
+  100: const Color.fromRGBO(236, 101, 60, .2),
+  200: const Color.fromRGBO(236, 101, 60, .3),
+  300: const Color.fromRGBO(236, 101, 60, .4),
+  400: const Color.fromRGBO(236, 101, 60, .5),
+  500: const Color.fromRGBO(236, 101, 60, .6),
+  600: const Color.fromRGBO(236, 101, 60, .7),
+  700: const Color.fromRGBO(236, 101, 60, .8),
+  800: const Color.fromRGBO(236, 101, 60, .9),
+  900: const Color.fromRGBO(236, 101, 60, 1),
+};
+
+// 0xFFFDCF76 #FDCF76
+Map<int, Color> color5 = {
+  50: const Color.fromRGBO(253, 207, 118, .1),
+  100: const Color.fromRGBO(253, 207, 118, .2),
+  200: const Color.fromRGBO(253, 207, 118, .3),
+  300: const Color.fromRGBO(253, 207, 118, .4),
+  400: const Color.fromRGBO(253, 207, 118, .5),
+  500: const Color.fromRGBO(253, 207, 118, .6),
+  600: const Color.fromRGBO(253, 207, 118, .7),
+  700: const Color.fromRGBO(253, 207, 118, .8),
+  800: const Color.fromRGBO(253, 207, 118, .9),
+  900: const Color.fromRGBO(253, 207, 118, 1),
+};
+
+// 0xFFF1AEC7 #F1AEC7
+Map<int, Color> color6 = {
+  50: const Color.fromRGBO(241, 174, 199, .1),
+  100: const Color.fromRGBO(241, 174, 199, .2),
+  200: const Color.fromRGBO(241, 174, 199, .3),
+  300: const Color.fromRGBO(241, 174, 199, .4),
+  400: const Color.fromRGBO(241, 174, 199, .5),
+  500: const Color.fromRGBO(241, 174, 199, .6),
+  600: const Color.fromRGBO(241, 174, 199, .7),
+  700: const Color.fromRGBO(241, 174, 199, .8),
+  800: const Color.fromRGBO(241, 174, 199, .9),
+  900: const Color.fromRGBO(241, 174, 199, 1),
+};
+
+// 0xFFA493C6 #A493C6
+Map<int, Color> color7 = {
+  50: const Color.fromRGBO(164, 147, 198, .1),
+  100: const Color.fromRGBO(164, 147, 198, .2),
+  200: const Color.fromRGBO(164, 147, 198, .3),
+  300: const Color.fromRGBO(164, 147, 198, .4),
+  400: const Color.fromRGBO(164, 147, 198, .5),
+  500: const Color.fromRGBO(164, 147, 198, .6),
+  600: const Color.fromRGBO(164, 147, 198, .7),
+  700: const Color.fromRGBO(164, 147, 198, .8),
+  800: const Color.fromRGBO(164, 147, 198, .9),
+  900: const Color.fromRGBO(164, 147, 198, 1),
+};
+
+// 0xFF55448B #55448B
+Map<int, Color> color8 = {
+  50: const Color.fromRGBO(85, 68, 139, .1),
+  100: const Color.fromRGBO(85, 68, 139, .2),
+  200: const Color.fromRGBO(85, 68, 139, .3),
+  300: const Color.fromRGBO(85, 68, 139, .4),
+  400: const Color.fromRGBO(85, 68, 139, .5),
+  500: const Color.fromRGBO(85, 68, 139, .6),
+  600: const Color.fromRGBO(85, 68, 139, .7),
+  700: const Color.fromRGBO(85, 68, 139, .8),
+  800: const Color.fromRGBO(85, 68, 139, .9),
+  900: const Color.fromRGBO(85, 68, 139, 1),
+};
 
 
 MaterialColor primaryColor = MaterialColor(0xFFB24F44, color0);
 MaterialColor secondaryColor = MaterialColor(0xFF33363F, color1);
 MaterialColor tertiairColor = MaterialColor(0xFFEAC1A2, color2);
 MaterialColor blackColor = MaterialColor(0xFF33363F, swatchColor);
-Color greenColor = const Color(0xFF43675F);
-Color orangeColor = const Color(0xFFEC653C);
-Color yellowColor = const Color(0xFFFDCF76);
-Color pinkColor = const Color(0xFFF1AEC7);
-Color indigoColor = const Color(0xFFA493C6);
-Color LightndigoColor = const Color(0xFF55448B);
+MaterialColor greenColor =  MaterialColor(0xFF43675F,color3);
+MaterialColor orangeColor =  MaterialColor(0xFFEC653C,color4);
+MaterialColor yellowColor =  MaterialColor(0xFFFDCF76,color5);
+MaterialColor pinkColor =  MaterialColor(0xFFF1AEC7,color6);
+MaterialColor indigoColor = MaterialColor(0xFFA493C6,color7);
+MaterialColor LightndigoColor = MaterialColor(0xFF55448B,color8);
 double PADDING = 10;
 double RADIUS = 12;
 const String boxSettings = 'settings';
@@ -241,7 +323,6 @@ final List<Map<String, dynamic>> intentionCategories = [
       'value': 'Reveil Spirituel',
       "key": "REVEIL_SPIRITUEL"
     },
-    
     
   ];
 final List<Map<String, dynamic>> indicatifContries = [ 

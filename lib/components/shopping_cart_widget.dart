@@ -97,7 +97,7 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            color: Color(0xFF000000),
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 12
                           ),),

@@ -20,7 +20,7 @@ class _IndexScreenState extends State<IndexScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-                color: greenColor.withOpacity(0.1),
+                color: greenColor[50],
                 height: 60,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -54,7 +54,7 @@ class _IndexScreenState extends State<IndexScreen> {
                 left: 0,
                 right: 0,
                 child: Container(
-                  color: greenColor.withOpacity(0.15),
+                  color: greenColor[50],
                   child: fragmentList[_selectedIndex]['fragment'],
                 )),
              Positioned(

@@ -14,7 +14,7 @@ String title;
   Widget build(BuildContext context) {
     return Container(
       height: 90,
-      color: greenColor.withOpacity(0.15),
+      color: greenColor[50],
       padding:  EdgeInsets.symmetric(horizontal: PADDING * 2),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

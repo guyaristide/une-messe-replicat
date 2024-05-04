@@ -60,7 +60,7 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.vertical(
                               top: Radius.circular(RADIUS * 3)),
-                          color: greenColor.withOpacity(0.15),
+                          color: greenColor[50],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -110,7 +110,7 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                   ),
                   Expanded(
                       child: Container(
-                    color: greenColor.withOpacity(0.15),
+                    color: greenColor[50],
                     child: ListView.builder(
                       scrollDirection: Axis.vertical,
                       itemCount: offeringItems.length,

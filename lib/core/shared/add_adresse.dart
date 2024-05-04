@@ -66,7 +66,7 @@ class _AddAdresseState extends State<AddAdresse> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.vertical(
                               top: Radius.circular(RADIUS * 3)),
-                          color: greenColor.withOpacity(0.15),
+                          color: greenColor[50],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -116,7 +116,7 @@ class _AddAdresseState extends State<AddAdresse> {
                      Expanded(
                       child: Container(
                         width: size.width,
-                      color: greenColor.withOpacity(0.15),
+                      color: greenColor[50],
                         child: SingleChildScrollView(
                           child: SpGrid(
                             crossAlignment: WrapCrossAlignment.center,

@@ -61,7 +61,7 @@ class EgliseItemWidget extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                            color: greenColor.withOpacity(0.2),
+                            color: greenColor.withOpacity(0.1),
                             borderRadius: const BorderRadius.all(Radius.circular(50))),
                         child: Icon(
                           Icons.arrow_forward_ios,

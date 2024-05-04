@@ -60,7 +60,7 @@ class DemandeItemWidget extends StatelessWidget {
                       fontSize: 12
                     ),),
                   ),
-              const SizedBox(height: 6,),
+              const SizedBox(height: 8,),
                   CustomTooltip(
                     message: '${intention}',
                     textColor: primaryColor,
@@ -82,12 +82,12 @@ class DemandeItemWidget extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      color: Color(0xFF000000),
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 12
                     ),),
                   ),
-                  const SizedBox(height: 6,),
+                  const SizedBox(height: 8,),
                   Row(children: [
                     Icon(Icons.share,color: greenColor,size: 16,),
                     const SizedBox(

@@ -91,7 +91,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             decoration: BoxDecoration(
               color: selectedWeekDay == i
               ? Colors.transparent
-              : greenColor.withOpacity(0.08),
+              : greenColor.withOpacity(0.07),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -6,7 +6,7 @@ import 'choice_offering.dart';
 import 'demande_messe.dart';
 import 'detail_eglise.dart';
 import 'dialogQrCode.dart';
-import 'dialog_succssful.dart';
+import 'dialog_successful.dart';
 
 class Modals {
   static Future<dynamic> showModalDemandeMesse(

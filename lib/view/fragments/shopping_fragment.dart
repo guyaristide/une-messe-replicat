@@ -100,13 +100,13 @@ class _ShoppingFragmentState extends State<ShoppingFragment> {
                   ),
                   AppButtomWidget(
                     label: "Ajouter une autre demande",
-                    buttomColor: greenColor.withOpacity(0.2),
+                    buttomColor: greenColor[100],
                     labelColor: greenColor,
                     press: () {},
                   ),
                   AppButtomWidget(
                     label: "Envoyer pour payer en espèces",
-                    buttomColor: greenColor.withOpacity(0.2),
+                    buttomColor: greenColor[100],
                     labelColor: greenColor,
                     press: () {},
                   )
