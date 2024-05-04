@@ -46,7 +46,7 @@ class InfosEgliseItemWidget extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      width: PADDING,
+                      width: 10,
                     ),
                     Container(
                       padding: const EdgeInsets.all(8),

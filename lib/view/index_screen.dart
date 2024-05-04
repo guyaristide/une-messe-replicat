@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'components/BottomNavigationWidget.dart';
-import 'components/top_bar_wdget.dart';
-import 'core/constants.dart';
-import 'home/fragments/demande_fragment.dart';
-import 'home/fragments/home_fragment.dart';
-import 'home/fragments/shopping_fragment.dart';
+import '../components/BottomNavigationWidget.dart';
+import '../components/top_bar_wdget.dart';
+import '../core/constants.dart';
+import 'fragments/demande_fragment.dart';
+import 'fragments/home_fragment.dart';
+import 'fragments/shopping_fragment.dart';
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
 
@@ -54,7 +54,6 @@ class _IndexScreenState extends State<IndexScreen> {
                 left: 0,
                 right: 0,
                 child: Container(
-                  // padding: EdgeInsets.symmetric(horizontal: PADDING*2),
                   color: greenColor.withOpacity(0.15),
                   child: fragmentList[_selectedIndex]['fragment'],
                 )),

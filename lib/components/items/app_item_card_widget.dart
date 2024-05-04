@@ -8,7 +8,7 @@ class AppItemCardWidget extends StatelessWidget {
    AppItemCardWidget({
     super.key,
     required this.listWidgets,
-     this.itemHeight = 170,
+     this.itemHeight = 160,
      this.itemWidth = 300,
     required this.indexItemColor,
   });
@@ -36,7 +36,6 @@ class AppItemCardWidget extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              // width: itemWidth,
               padding:  EdgeInsets.all(PADDING*2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +49,6 @@ class AppItemCardWidget extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  // width: 90,
                   decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                 topRight: Radius.circular(RADIUS*2),
@@ -63,14 +61,14 @@ class AppItemCardWidget extends StatelessWidget {
                 Positioned(
                   left: 0,
                   right: 0,
-                  bottom: 0,
                   top: 20,
+                  bottom: 0,
                   child: Container(
                   decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                 topRight: Radius.circular(RADIUS*5),
                 topLeft: Radius.circular(RADIUS*7),
-                bottomRight: Radius.circular(RADIUS*2)
+                bottomRight: Radius.circular(RADIUS*4)
                         ),
                         color: itemColor['fontColor'],
                       ),

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:simple_grid/simple_grid.dart';
 import 'package:une_messe/components/app_buttom_widget.dart';
 import 'package:une_messe/components/demande_item_widget.dart';
@@ -72,7 +70,7 @@ class _HomeFragmentState extends State<HomeFragment> {
             height: PADDING * 2,
           ),
           SizedBox(
-            height: 160,
+            height: 170,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: demandeList.length,

@@ -103,6 +103,7 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'adresse': 'Morokro',
     'name': 'famille kouadio',
     'intention': 'Action de grâce',
+    'nombre_messe': '2',
     'motif': 'Pour l’anniversaire Franck et Lise',
   },
   {
@@ -111,6 +112,7 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'adresse': 'Abidjan Riviera Palmeraie',
     'name': 'Saint Joseph',
     'intention': 'Repos de l’âme',
+    'nombre_messe': '1',
     'motif': 'Pour le bien-aimé Alfred',
   },
    {
@@ -119,7 +121,8 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'adresse': 'Divo',
     'name': 'Maryline n\'Dri',
     'intention': 'Action de grâce',
-    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
+    'nombre_messe': '2',
+    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie , la reussite et prosperité dans ses affaires.',
   },
    {
     'date': 'DIM. 7 AVRIL - 11H',
@@ -127,25 +130,9 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'adresse': 'Divo',
     'name': 'Maryline n\'Dri',
     'intention': 'Action de grâce',
+    'nombre_messe': '5',
     'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
   },
-   {
-    'date': 'DIM. 7 AVRIL - 11H',
-    'communaute': 'Notre Dame des Apotre',
-    'adresse': 'Divo',
-    'name': 'Maryline n\'Dri',
-    'intention': 'Action de grâce',
-    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
-  },
-   {
-    'date': 'DIM. 7 AVRIL - 11H',
-    'communaute': 'Notre Dame des Apotre',
-    'adresse': 'Divo',
-    'name': 'Maryline n\'Dri',
-    'intention': 'Action de grâce',
-    'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
-  },
- 
  
 ];
 
