@@ -133,7 +133,7 @@ class _AddAdresseState extends State<AddAdresse> {
                                   labelStyle: TextStyle(color: greenColor, fontSize: 14,fontWeight: FontWeight.w500,),
                                     labelText: 'Indicatif',
                                     hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400,),
-                                    border: OutlineInputBorder(),
+                                    border: const OutlineInputBorder(),
                                   ),
                                 value: _selectedItem,
                                 onChanged: ( Map<String, dynamic>? newValue) {

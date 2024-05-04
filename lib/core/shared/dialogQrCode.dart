@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:une_messe/components/app_buttom_widget.dart';
 import '../constants.dart';
 
 class DialogQrCode extends StatelessWidget {
-  const DialogQrCode({Key? key}) : super(key: key);
+  const DialogQrCode({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'add_adresse.dart';
 import 'choice_offering.dart';
 import 'demande_messe.dart';
+import 'detail_eglise.dart';
 import 'dialogQrCode.dart';
 import 'dialog_succssful.dart';
 
@@ -30,6 +31,25 @@ class Modals {
     );
   }
 
+    static Future<dynamic> showModalDetailEglise(
+    BuildContext context, {
+    required String eglise,
+    required String adresse,
+    required List hours,
+  }) {
+    return showCupertinoModalPopup(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return DetailEglise(
+          eglise: eglise,
+          adresse: adresse, 
+          hours: hours,
+        );
+      },
+    );
+  }
+
   static Future<dynamic> showModalChoiceOffering(
     BuildContext context,
     // { }
@@ -38,7 +58,7 @@ class Modals {
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
-        return ChoiceOffering();
+        return const ChoiceOffering();
       },
     );
   }
@@ -51,7 +71,7 @@ class Modals {
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
-        return AddAdresse();
+        return const AddAdresse();
       },
     );
   }
@@ -63,7 +83,7 @@ class Modals {
     return showDialog(
       context: context,
       builder: (BuildContext context) {
-        return DialogSuccessful();
+        return const DialogSuccessful();
       },
     );
   }
@@ -74,7 +94,7 @@ class Modals {
     return showDialog(
       context: context,
       builder: (BuildContext context) {
-        return DialogQrCode();
+        return const DialogQrCode();
       },
     );
   }

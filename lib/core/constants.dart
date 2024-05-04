@@ -209,6 +209,17 @@ final List<Map<String, dynamic>> egliseList = [
     {'hour':'9:30',}
     ]
   },
+  {
+    
+    'eglise': 'Notre Dame des apotre',
+    'adresse': 'Yopougon St andré',
+    'date':[
+    {'hour':'8:00'},
+    {'hour':'9:30',},
+    {'hour':'16:00'},
+    {'hour':'19:00'},
+    ]
+  },
 ];
 
 

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../core/constants.dart';
 
@@ -37,12 +35,12 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text("${widget.type}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold
                   ),
                   ),
-                  SizedBox(width: 5,),
-                  Icon(Icons.info,size: 20,)
+                  const SizedBox(width: 5,),
+                  const Icon(Icons.info,size: 20,)
                 ],
               ),
               Text("${widget.price} F CFA",
@@ -68,7 +66,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
                   color: value == 0? Colors.grey: Colors.black,
                   borderRadius: BorderRadius.all(Radius.circular(RADIUS*2))
                 ),
-                child: Icon(Icons.remove,color: Colors.white,),
+                child: const Icon(Icons.remove,color: Colors.white,),
               ),
             ),
               Padding(
@@ -86,7 +84,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
                   color: value == 0? Colors.grey: Colors.black,
                   borderRadius: BorderRadius.all(Radius.circular(RADIUS*2))
                 ),
-                child: Icon(Icons.add,color: Colors.white,),
+                child: const Icon(Icons.add,color: Colors.white,),
               ),
             ),
           ],

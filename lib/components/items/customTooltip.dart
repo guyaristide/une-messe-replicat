@@ -5,7 +5,7 @@ class CustomTooltip extends StatefulWidget {
   final Widget child;
   final dynamic textColor;
 
-  CustomTooltip({
+  CustomTooltip({super.key, 
     required this.message,
     required this.child,
      this.textColor = Colors.black,

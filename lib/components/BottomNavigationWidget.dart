@@ -24,7 +24,7 @@ class _ButtomNavigationWidgetState extends State<ButtomNavigationWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
           Icon(widget.icon,color: widget.currentIndex == widget.indexSelected ? primaryColor : greenColor),

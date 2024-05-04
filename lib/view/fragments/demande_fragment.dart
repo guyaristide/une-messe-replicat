@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:une_messe/core/constants.dart';
 
-import '../../components/infos_eglise_item_widget.dart';
+import '../../components/eglise_item_widget.dart';
 import '../../components/items/calendarWidget.dart';
 
 class DemandeFragment extends StatefulWidget {
@@ -26,7 +26,7 @@ class _DemandeFragmentState extends State<DemandeFragment> {
           CalendarWidget(),
 
           ...List.generate(egliseList.length, (index) {
-            return InfosEgliseItemWidget(
+            return EgliseItemWidget(
               eglise: egliseList[index]['eglise'],
               adresse: egliseList[index]['adresse'],
               hours: egliseList[index]['date'],

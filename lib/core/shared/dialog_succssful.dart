@@ -3,7 +3,7 @@ import 'package:une_messe/components/app_buttom_widget.dart';
 import '../constants.dart';
 
 class DialogSuccessful extends StatelessWidget {
-  const DialogSuccessful({Key? key}) : super(key: key);
+  const DialogSuccessful({super.key});
 
   @override
   Widget build(BuildContext context) {
