@@ -79,12 +79,8 @@ class _HomeFragmentState extends State<HomeFragment> {
                 return Padding(
                   padding:  EdgeInsets.only(right:PADDING),
                   child: DemandeItemWidget(
-                    adresse: item['adresse'],
-                    communaute: item['communaute'],
-                    date: item['date'],
-                    motif: item['motif'],
-                    intention: item['intention'], 
-                    indexItemColor: i,
+                    indexItemColor: i, 
+                    data: item,
                   ),
                 );
               },

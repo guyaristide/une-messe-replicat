@@ -117,8 +117,7 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                       itemBuilder: (context, e) {
                         var item = offeringItems[e];
                         return OfferingItemWidget(
-                          type: item['type'],
-                          price: item['price'],
+                          data: item,
                         );
                       },
                     ),

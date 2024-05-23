@@ -6,18 +6,16 @@ import 'package:une_messe/core/constants.dart';
 import '../../components/formfield.dart';
 import 'modals.dart';
 
-class DemandeMesse extends StatefulWidget {
-  final String eglise;
-  final String adresse;
-  final String date;
+class DemandeMesse extends StatefulWidget { 
+  final String time;
   final String hour;
+  final dynamic data;
 
   const DemandeMesse({
     super.key,
-    required this.eglise,
-    required this.adresse,
-    required this.date,
+    required this.time,
     required this.hour,
+    required this.data,
   });
 
   @override
@@ -86,14 +84,14 @@ class _DemandeMesseState extends State<DemandeMesse> {
                               height: 8,
                             ),
                             Text(
-                              "${widget.eglise}",
+                              "${widget.data['eglise']}",
                               style: TextStyle(
                                   color: yellowColor,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              "${widget.adresse}",
+                              "${widget.data['adresse']}",
                               style: const TextStyle(color: Colors.white),
                             )
                           ],
@@ -135,7 +133,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                           child: Column(
                             children: [
                               Text(
-                                "${widget.date}",
+                                "${widget.time}",
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(fontWeight: FontWeight.bold),
                               ),

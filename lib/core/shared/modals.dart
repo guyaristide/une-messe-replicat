@@ -11,21 +11,19 @@ import 'dialog_successful.dart';
 class Modals {
   static Future<dynamic> showModalDemandeMesse(
     BuildContext context, {
-    required String eglise,
-    required String adresse,
-    required String date,
+   
+    required String time,
     required String hour,
+    required dynamic data,
   }) {
     return showCupertinoModalPopup(
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
         return DemandeMesse(
-          eglise: eglise,
-          adresse: adresse,
-          date: date,
+          time: time,
+          data: data, 
           hour: hour,
-          // order: order
         );
       },
     );
@@ -33,18 +31,14 @@ class Modals {
 
     static Future<dynamic> showModalDetailEglise(
     BuildContext context, {
-    required String eglise,
-    required String adresse,
-    required List hours,
+    required dynamic data,
   }) {
     return showCupertinoModalPopup(
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
         return DetailEglise(
-          eglise: eglise,
-          adresse: adresse, 
-          hours: hours,
+          data: data,
         );
       },
     );

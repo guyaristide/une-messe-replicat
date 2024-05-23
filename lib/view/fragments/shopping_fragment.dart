@@ -40,14 +40,8 @@ class _ShoppingFragmentState extends State<ShoppingFragment> {
                       return Padding(
                         padding:  EdgeInsets.only(right:PADDING),
                         child: ShoppingCartWidget(
-                                adresse: item['adresse'],
-                                communaute: item['communaute'],
-                                date: item['date'],
-                                motif: item['motif'],
-                                intention: item['intention'],
-                                 name: item['name'], 
-                                 indexItemColor: i, 
-                                 nombreMesse:int.parse(item['nombre_messe']),
+                                 indexItemColor: i,  
+                                 data: item,
                               ),
                       );
                     },

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:simple_grid/simple_grid.dart';
 
@@ -9,24 +7,20 @@ import 'items/hour_item.dart';
 
 // ignore: must_be_immutable
 class EgliseItemWidget extends StatelessWidget {
-  EgliseItemWidget(
-      {super.key, 
-      required this.eglise, 
-      required this.adresse,
-      required this.hours,
-      required this.date,
-      });
-  String eglise;
-  String adresse;
-  List hours ;
-  String date ;
+  EgliseItemWidget({
+    super.key,
+    required this.time,
+    required this.data,
+  });
+  String time;
+  dynamic data;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       margin: const EdgeInsets.only(bottom: 3),
-      padding: EdgeInsets.only(bottom:PADDING * 2),
+      padding: EdgeInsets.only(bottom: PADDING * 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,12 +30,13 @@ class EgliseItemWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
-                  onTap: () async{
+                  onTap: () async {
                     await Modals.showModalDetailEglise(
-                      context, 
-                      eglise: eglise, 
-                      adresse: adresse, 
-                      hours: hours,
+                      context,
+                      // eglise: data['eglise'],
+                      // adresse: data['adresse'],
+                      // hours: data['date'], 
+                      data: data,
                     );
                   },
                   child: Row(
@@ -49,7 +44,7 @@ class EgliseItemWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        '${eglise}',
+                        '${data['eglise']}',
                         style: TextStyle(
                             fontSize: 20.0,
                             color: greenColor,
@@ -62,7 +57,8 @@ class EgliseItemWidget extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                             color: greenColor.withOpacity(0.1),
-                            borderRadius: const BorderRadius.all(Radius.circular(50))),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(50))),
                         child: Icon(
                           Icons.arrow_forward_ios,
                           size: 20,
@@ -73,46 +69,41 @@ class EgliseItemWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "${adresse}",
+                  "${data['adresse']}",
                   style: TextStyle(color: greenColor),
                 ),
               ],
             ),
           ),
-          
           SpGrid(
-            spacing: PADDING*2,
-            runSpacing: PADDING*2,
-            crossAlignment: WrapCrossAlignment.center,
-            alignment: WrapAlignment.start,
-            runAlignment: WrapAlignment.start,
-            children: [
-              ...List.generate(
-                hours.length, 
-              (index) {
-                return   SpGridItem(
-                md: 2,
-                sm: 3,
-                xs: 4,
-                child: HourItem(
-                  hour: "${hours[index]['hour']}", 
-                  press: () async{
-                  await Modals.showModalDemandeMesse(
-                    context, 
-                    eglise: eglise, 
-                    adresse: adresse, 
-                    date: date, 
-                    hour: hours[index]['hour'],
-                  );
-                },));
-          
-              })
-          ]
-          )
+              spacing: PADDING * 2,
+              runSpacing: PADDING * 2,
+              crossAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.start,
+              runAlignment: WrapAlignment.start,
+              children: [
+                if (data['date'] != null)
+                  ...data['date'].asMap().entries.map((entry) {
+                    final index = entry.key;
+                    return SpGridItem(
+                        md: 2,
+                        sm: 3,
+                        xs: 4,
+                        child: HourItem(
+                          hour: "${data['date'][index]['hour']}",
+                          press: () async {
+                            await Modals.showModalDemandeMesse(
+                              context,
+                              hour: data['date'][index]['hour'],
+                              time: time, 
+                              data: data,
+                            );
+                          },
+                        ));
+                  }).toList()
+              ])
         ],
       ),
     );
   }
 }
-
-

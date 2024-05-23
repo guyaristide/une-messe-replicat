@@ -8,26 +8,18 @@ import 'items/app_item_card_widget.dart';
 class DemandeItemWidget extends StatelessWidget {
    DemandeItemWidget({
     super.key,
-    required this.adresse,
-    required this.communaute,
-    required this.date,
-    required this.motif,
-    required this.intention,
     required this.indexItemColor,
+    required this.data
   });
-  String date;
-  String communaute;
-  String adresse;
-  String motif;
-  String intention;
   int indexItemColor ;
+  dynamic data;
 
   @override
   Widget build(BuildContext context) {
     return AppItemCardWidget(
       indexItemColor: indexItemColor,
       listWidgets: [
-        Text("${date}",
+        Text("${data['date']}",
                    maxLines: 1,
                    overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -39,8 +31,8 @@ class DemandeItemWidget extends StatelessWidget {
                     height: 1,
                   ),
                   CustomTooltip(
-                    message: '${communaute}',
-                    child: Text("${communaute}",
+                    message: '${data['communaute']}',
+                    child: Text("${data['communaute']}",
                      maxLines: 1,
                      overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -50,9 +42,9 @@ class DemandeItemWidget extends StatelessWidget {
                     ),),
                   ),
                   CustomTooltip(
-                    message: '${adresse}',
+                    message: '${data['adresse']}',
                     textColor: Colors.grey,
-                    child: Text("${adresse}",
+                    child: Text("${data['adresse']}",
                      maxLines: 1,
                      overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -62,9 +54,9 @@ class DemandeItemWidget extends StatelessWidget {
                   ),
               const SizedBox(height: 8,),
                   CustomTooltip(
-                    message: '${intention}',
+                    message: '${data['intention']}',
                     textColor: primaryColor,
-                    child: Text("${intention}",
+                    child: Text("${data['intention']}",
                      maxLines: 1,
                      overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -77,8 +69,8 @@ class DemandeItemWidget extends StatelessWidget {
                     height: 1,
                   ),
                   CustomTooltip(
-                    message: '${motif}',
-                    child: Text("${motif}",
+                    message: '${data['motif']}',
+                    child: Text("${data['motif']}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

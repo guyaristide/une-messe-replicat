@@ -8,23 +8,11 @@ import 'items/customTooltip.dart';
 class ShoppingCartWidget extends StatefulWidget {
    ShoppingCartWidget({
      super.key,
-    required this.adresse,
-    required this.communaute,
-    required this.date,
-    required this.motif,
-    required this.intention,
-    required this.name,
     required this.indexItemColor,
-    required this.nombreMesse,
+    required this.data,
     });
-    String date;
-  String communaute;
-  String adresse;
-  String motif;
-  String intention;
-  String name;
-  int nombreMesse ;
   int indexItemColor ;
+  dynamic data;
 
   @override
   State<ShoppingCartWidget> createState() => _ShoppingCartWidgetState();
@@ -46,7 +34,7 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
             itemHeight: 150,
             indexItemColor: widget.indexItemColor,
             listWidgets: [
-              Text("${widget.date}",
+              Text("${widget.data['date']}",
                          maxLines: 1,
                          overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -58,8 +46,8 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
                           height: 1,
                         ),
                         CustomTooltip(
-                          message: '${widget.communaute}',
-                          child: Text("${widget.communaute}",
+                          message: '${widget.data['communaute']}',
+                          child: Text("${widget.data['communaute']}",
                            maxLines: 1,
                            overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -69,9 +57,9 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
                           ),),
                         ),
                         CustomTooltip(
-                          message: '${widget.adresse}',
+                          message: '${widget.data['adresse']}',
                           textColor: Colors.grey,
-                          child: Text("${widget.adresse}",
+                          child: Text("${widget.data['adresse']}",
                            maxLines: 1,
                            overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -92,8 +80,8 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
                           height: 1,
                         ),
                         CustomTooltip(
-                          message: '${widget.nombreMesse} x Une Messe',
-                          child: Text("${widget.nombreMesse} x Une Messe",
+                          message: '${int.parse(widget.data['nombre_messe']?? "0")} x Une Messe',
+                          child: Text("${int.parse(widget.data['nombre_messe']?? "0")} x Une Messe",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -109,9 +97,9 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
              Padding(
                padding:  EdgeInsets.symmetric(horizontal:PADDING*2),
                child: CustomTooltip(
-                      message: '${widget.intention}',
+                      message: '${widget.data['intention']}',
                       textColor: primaryColor,
-                      child: Text("${widget.intention}",
+                      child: Text("${widget.data['intention']}",
                        maxLines: 1,
                        overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -129,8 +117,8 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
                     height: 60,
                     padding:  EdgeInsets.symmetric(horizontal:PADDING*2),
                     child: CustomTooltip(
-                      message: '${widget.motif}',
-                      child: Text("${widget.motif}",
+                      message: '${widget.data['motif']}',
+                      child: Text("${widget.data['motif']}",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 3,
                       style: const TextStyle(
@@ -160,8 +148,8 @@ class _ShoppingCartWidgetState extends State<ShoppingCartWidget> {
                   Padding(
                     padding:  EdgeInsets.symmetric(horizontal:PADDING*2),
                     child: CustomTooltip(
-                      message: '${widget.name}',
-                      child: Text("${widget.name}",
+                      message: '${widget.data['name']}',
+                      child: Text("${widget.data['name']}",
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(

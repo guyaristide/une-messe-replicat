@@ -9,15 +9,11 @@ import 'modals.dart';
 
 
 class DetailEglise extends StatefulWidget {
-  final String eglise;
-  final String adresse;
-  final List hours;
+  dynamic data;
 
-  const DetailEglise({
+   DetailEglise({
     super.key,
-    required this.eglise,
-    required this.adresse,
-    required this.hours,
+    required this.data
   });
 
   @override
@@ -86,14 +82,14 @@ class _DetailEgliseState extends State<DetailEglise> {
                               height: 8,
                             ),
                             Text(
-                              "${widget.eglise}",
+                              "${widget.data['eglise']}",
                               style: TextStyle(
                                   color: yellowColor,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              "${widget.adresse}",
+                              "${widget.data['adresse']}",
                               style: const TextStyle(color: Colors.white),
                             )
                           ],
@@ -141,20 +137,20 @@ class _DetailEgliseState extends State<DetailEglise> {
                               alignment: WrapAlignment.start,
                               runAlignment: WrapAlignment.start,
                               children: [
-                                ...List.generate(widget.hours.length, (index) {
+                                if(widget.data['date'] != null)
+                                ...List.generate(widget.data['date'].length, (index) {
                                   return SpGridItem(
                                       md: 2,
                                       sm: 3,
                                       xs: 4,
                                       child: HourItem(
-                                        hour: "${widget.hours[index]['hour']}", 
+                                        hour: "${widget.data['date'][index]['hour']}", 
                                       press: ()async{
                                       await Modals.showModalDemandeMesse(
                                         context, 
-                                        eglise: widget.eglise, 
-                                        adresse: widget.adresse, 
-                                        date: "DIM 05 MAI", 
-                                        hour: widget.hours[index]['hour'],
+                                        time: "DIM 05 MAI", 
+                                        hour: widget.data['date'][index]['hour'],
+                                         data: widget.data,
                                       );
                                     },));
                                 })

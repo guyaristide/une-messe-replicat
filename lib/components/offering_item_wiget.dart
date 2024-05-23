@@ -6,11 +6,9 @@ import '../core/constants.dart';
 class OfferingItemWidget extends StatefulWidget {
    OfferingItemWidget({
     super.key,
-    required this.type,
-    required this.price,
+    required this.data,
   });
-String price;
-String type;
+dynamic data;
   @override
   State<OfferingItemWidget> createState() => _OfferingItemWidgetState();
 }
@@ -34,7 +32,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("${widget.type}",
+                  Text("${widget.data['type']}",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold
                   ),
@@ -43,7 +41,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
                   const Icon(Icons.info,size: 20,)
                 ],
               ),
-              Text("${widget.price} F CFA",
+              Text("${widget.data['price']} F CFA",
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: greenColor,

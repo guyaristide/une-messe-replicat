@@ -26,11 +26,10 @@ class _DemandeFragmentState extends State<DemandeFragment> {
           CalendarWidget(),
 
           ...List.generate(egliseList.length, (index) {
+           var item = egliseList[index];
             return EgliseItemWidget(
-              eglise: egliseList[index]['eglise'],
-              adresse: egliseList[index]['adresse'],
-              hours: egliseList[index]['date'],
-              date: 'Dimanche 7 Avril',
+              time: 'Dimanche 7 Avril', 
+              data: item,
             );
           })
         ],
