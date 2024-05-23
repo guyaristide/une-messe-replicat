@@ -91,16 +91,16 @@ final List<Map<String, dynamic>> fragmentList = [
 
 final List<Map<String, dynamic>> titleFragmentList = [
   {
-    'title': "assets/images/Bienvenue👋🏾.png"
+    'title': "Bienvenue"
   },
   {
-    'title': "assets/images/Choisissez.votre.messe🙏🏾.png"
+    'title': "Choisissez votre messe"
   },
   {
-    'title': "assets/images/Panier-de-prières🙌🏾.png"
+    'title': "Panier de priere"
   },
   {
-    'title': "assets/images/Bienvenue👋🏾.png"
+    'title': "Paramètres"
   },
 ];
 

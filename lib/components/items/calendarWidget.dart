@@ -19,50 +19,54 @@ class _CalendarWidgetState extends State<CalendarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          border: Border(bottom: BorderSide(color: Colors.black12))),
-      child: Row(
-        children: [
-          Expanded(
-            child: SizedBox(
-              height: 72,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: buildWeekDays(),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 70,
-            child: GestureDetector(
-              onTap: () {
-                _selectDate(context);
-                // setState(() {
-                //   _selectedDate != null
-                //       ? '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}'
-                //       : '';
-                // });
-              },
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.calendar_month,
-                    color: greenColor,
+    return Column(
+      children: [
+        Container(
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              border: Border(bottom: BorderSide(color: Colors.black12))),
+          child: Row(
+            children: [
+              Expanded(
+                child: SizedBox(
+                  height: 72,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: buildWeekDays(),
                   ),
-                  Icon(
-                    Icons.keyboard_arrow_down,
-                    color: greenColor,
-                  )
-                ],
+                ),
               ),
-            ),
+              SizedBox(
+                width: 70,
+                child: GestureDetector(
+                  onTap: () {
+                    _selectDate(context);
+                    // setState(() {
+                    //   _selectedDate != null
+                    //       ? '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}'
+                    //       : '';
+                    // });
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.calendar_month,
+                        color: greenColor,
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                        color: greenColor,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
