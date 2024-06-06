@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
-
 import '../../core/constants.dart';
 
-class CalendarWidget extends StatefulWidget {
-   CalendarWidget({
-    super.key,
-   });
+class LocalizedCalendarWidget extends StatefulWidget {
+  const LocalizedCalendarWidget({super.key});
 
   @override
-  State<CalendarWidget> createState() => _CalendarWidgetState();
+  State<LocalizedCalendarWidget> createState() => _LocalizedCalendarWidgetState();
 }
 
-class _CalendarWidgetState extends State<CalendarWidget> {
+class _LocalizedCalendarWidgetState extends State<LocalizedCalendarWidget> {
   DateTime? _selectedDate = DateTime.now();
   int selectedWeekDay = 0;
 
   @override
   Widget build(BuildContext context) {
+    // Initialiser la configuration locale
+    initializeDateFormatting(Localizations.localeOf(context).toString(), null);
+
     return Container(
       decoration: const BoxDecoration(
-          color: Colors.white,
-          border: Border(bottom: BorderSide(color: Colors.black12))),
+        color: Colors.white,
+        border: Border(bottom: BorderSide(color: Colors.black12)),
+      ),
       child: Row(
         children: [
           Expanded(
@@ -30,7 +31,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               height: 72,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: buildWeekDays(),
+                children: buildWeekDays(context),
               ),
             ),
           ),
@@ -39,11 +40,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             child: GestureDetector(
               onTap: () {
                 _selectDate(context);
-                // setState(() {
-                //   _selectedDate != null
-                //       ? '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}'
-                //       : '';
-                // });
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,7 +52,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   Icon(
                     Icons.keyboard_arrow_down,
                     color: greenColor,
-                  )
+                  ),
                 ],
               ),
             ),
@@ -66,14 +62,11 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     );
   }
 
-  List<Widget> buildWeekDays() {
-    initializeDateFormatting('fr_FR', null);
-
+  List<Widget> buildWeekDays(BuildContext context) {
     final now = DateTime.now();
     final weekDays = <Widget>[];
-    final dayFormatter = DateFormat('EEE', 'fr_FR');
-    final monthFormatter = DateFormat('MMM', 'fr_FR');
-    
+    final dayFormatter = DateFormat('EEE', Localizations.localeOf(context).toString());
+    final monthFormatter = DateFormat('MMM', Localizations.localeOf(context).toString());
 
     for (int i = 0; i < 30; i++) {
       final day = now.add(Duration(days: i));
@@ -81,47 +74,57 @@ class _CalendarWidgetState extends State<CalendarWidget> {
         GestureDetector(
           onTap: () {
             setState(() {
-            selectedWeekDay = i;
-            _selectedDate = day;
-            print("----------------------------${day}");
+              selectedWeekDay = i;
+              _selectedDate = day;
             });
           },
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
               color: selectedWeekDay == i
-              ? Colors.transparent
-              : greenColor.withOpacity(0.07),
+                  ? Colors.transparent
+                  : greenColor.withOpacity(0.07),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   dayFormatter.format(day).toUpperCase(),
-                  style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey),
+                  style:  TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SpaceGrotesk',
+                    color: selectedWeekDay == i
+                  ? const Color(0xff444B59)
+                  : const Color(0xff89898A),
+                  ),
                 ),
                 Text(
                   '${day.day}',
-                  style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SpaceGrotesk',
+                    color: selectedWeekDay == i
+                  ? const Color(0xff444B59)
+                  : const Color(0xff89898A),
+                  ),
                 ),
                 Text(
                   monthFormatter.format(day),
-                  style: const TextStyle(fontSize: 14, color: Colors.grey),
+                  style: const TextStyle(
+                    fontSize: 14, 
+                    color: Color(0xff89898A),
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SpaceGrotesk',
+                    ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 6),
                   width: 40,
                   height: 3,
-                  color: selectedWeekDay == i
-                  ? primaryColor
-                  : Colors.transparent,
-                )
+                  color: selectedWeekDay == i ? primaryColor : Colors.transparent,
+                ),
               ],
             ),
           ),
@@ -145,5 +148,4 @@ class _CalendarWidgetState extends State<CalendarWidget> {
       });
     }
   }
-
 }

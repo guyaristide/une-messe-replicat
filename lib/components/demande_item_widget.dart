@@ -20,11 +20,12 @@ class DemandeItemWidget extends StatelessWidget {
       indexItemColor: indexItemColor,
       listWidgets: [
         Text("${data['date']}",
-                   maxLines: 1,
-                   overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: primaryColor,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'SpaceGrotesk',
                     fontSize: 12
                   ),),
                   const SizedBox(
@@ -33,22 +34,24 @@ class DemandeItemWidget extends StatelessWidget {
                   CustomTooltip(
                     message: '${data['communaute']}',
                     child: Text("${data['communaute']}",
-                     maxLines: 1,
-                     overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'SpaceGrotesk',
                       fontSize: 12
                     ),),
                   ),
                   CustomTooltip(
                     message: '${data['adresse']}',
-                    textColor: Colors.grey,
+                    textColor: const Color(0xff444B59),
                     child: Text("${data['adresse']}",
-                     maxLines: 1,
-                     overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      color: Colors.grey,
+                      color:Color(0xff444B59),
+                      fontFamily: 'SpaceGrotesk',
                       fontSize: 12
                     ),),
                   ),

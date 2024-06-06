@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:une_messe/components/app_buttom_widget.dart';
+import 'package:une_messe/components/items/dent_de_scie.dart';
+//import 'package:une_messe/components/items/dent_de_scie.dart';
 import 'package:une_messe/core/constants.dart';
-
+import 'package:une_messe/view/fragments/index_mobile2.dart';
 import '../../components/offering_item_wiget.dart';
 
 class ChoiceOffering extends StatefulWidget {
@@ -31,7 +33,7 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color(0xffe9eeea), // Correction de la couleur de fond
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
@@ -43,8 +45,7 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
             child: Container(
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(RADIUS * 3)),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(radius * 3)),
                 ),
                 color: Colors.white,
               ),
@@ -58,8 +59,7 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                         width: size.width,
                         height: 200,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(RADIUS * 3)),
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(radius * 3)),
                           color: greenColor[50],
                         ),
                         child: Column(
@@ -67,22 +67,24 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Center(
-                                child: Image.asset(
-                                    "assets/images/hands-gesture.png")),
+                                child: Image.asset("assets/images/hands-gesture.png")),
                             const SizedBox(
                               height: 8,
                             ),
                             const Text(
                               "Choisissez votre offrande",
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 20, 
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'SpaceGrotesk',
+                                  ),
                             ),
                           ],
                         ),
                       ),
                       Positioned(
                         top: 20,
-                        left: PADDING * 2,
+                        left: padding * 2,
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: InkWell(
@@ -122,37 +124,62 @@ class _ChoiceOfferingState extends State<ChoiceOffering> {
                       },
                     ),
                   )),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: PADDING * 2),
-                    height: 150,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Stack(
+                    clipBehavior: Clip.none, // Permet au ClipPath de dépasser son conteneur
+                    children: [
+                      Positioned(
+                        top: -10, // Décale le ClipPath vers le haut
+                        left: 0,
+                        right: 0,
+                        child: ClipPath(
+                          clipper: ZigZagClipper(),
+                          child: Container(
+                            height: 30, // Ajustez la hauteur pour permettre aux dents d'être visibles
+                            color: Colors.white, // Couleur des dents
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: padding * 2),
+                        height: 150,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text(
-                              "Offrande",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14),
+                            const Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Offrande",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, 
+                                      fontSize: 14,
+                                      fontFamily: 'SpaceGrotesk',
+                                      ),
+                                ),
+                                Text(
+                                  "0 CFA",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, 
+                                      fontSize: 14,
+                                      fontFamily: 'SpaceGrotesk',
+                                      ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              "0 CFA",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14),
-                            ),
+                            AppButtonWidget(
+                              label: "Ajouter au panier",
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Index2()));
+                              },
+                            )
                           ],
                         ),
-                        AppButtomWidget(
-                          label: "Ajouter au panier",
-                          press: () {
-                            
-                          },
-                        )
-                      ],
-                    ),
-                  )
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

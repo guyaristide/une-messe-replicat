@@ -5,10 +5,10 @@ class CustomTooltip extends StatefulWidget {
   final Widget child;
   final dynamic textColor;
 
-  CustomTooltip({super.key, 
+  const CustomTooltip({super.key, 
     required this.message,
     required this.child,
-     this.textColor = Colors.black,
+    this.textColor = Colors.black,
   });
 
   @override
@@ -26,12 +26,17 @@ class _CustomTooltipState extends State<CustomTooltip> {
             builder: (BuildContext context) {
               return AlertDialog(
                 backgroundColor: Colors.white,
-                 shape: RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
                 title: Text("${widget.message}",),
-                titlePadding: EdgeInsets.all(10),
-                titleTextStyle: TextStyle(color: widget.textColor,fontSize: 16,),
+                titlePadding: const EdgeInsets.all(10),
+                titleTextStyle: TextStyle(
+                  color: widget.textColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'SpaceGrotesk',
+                  ),
               );
             },
           );

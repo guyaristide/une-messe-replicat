@@ -20,12 +20,12 @@ class EgliseItemWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       margin: const EdgeInsets.only(bottom: 3),
-      padding: EdgeInsets.only(bottom: PADDING * 2),
+      padding: EdgeInsets.only(bottom: padding * 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.all(PADDING * 2),
+            padding: EdgeInsets.all(padding * 2),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,7 +48,9 @@ class EgliseItemWidget extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.0,
                             color: greenColor,
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'SpaceGrotesk',
+                            ),
                       ),
                       const SizedBox(
                         width: 10,
@@ -70,14 +72,18 @@ class EgliseItemWidget extends StatelessWidget {
                 ),
                 Text(
                   "${data['adresse']}",
-                  style: TextStyle(color: greenColor),
+                  style: TextStyle(
+                    color: greenColor,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SpaceGrotesk',
+                  ),
                 ),
               ],
             ),
           ),
           SpGrid(
-              spacing: PADDING * 2,
-              runSpacing: PADDING * 2,
+              spacing: padding * 2,
+              runSpacing: padding * 2,
               crossAlignment: WrapCrossAlignment.center,
               alignment: WrapAlignment.start,
               runAlignment: WrapAlignment.start,

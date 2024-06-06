@@ -4,11 +4,11 @@ import '../../core/constants.dart';
 
 // ignore: must_be_immutable
 class AppItemCardWidget extends StatelessWidget {
-   AppItemCardWidget({
+  AppItemCardWidget({
     super.key,
     required this.listWidgets,
-     this.itemHeight = 160,
-     this.itemWidth = 300,
+    this.itemHeight = 160,
+    this.itemWidth = 300,
     required this.indexItemColor,
   });
   List<Widget> listWidgets;
@@ -25,7 +25,7 @@ class AppItemCardWidget extends StatelessWidget {
       width: itemWidth,
       height: itemHeight,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(RADIUS*2)),
+        borderRadius: BorderRadius.all(Radius.circular(radius*2)),
         color: Colors.white,
       ),
       child: Row(
@@ -35,12 +35,12 @@ class AppItemCardWidget extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              padding:  EdgeInsets.all(PADDING*2),
+              padding:  EdgeInsets.all(padding*2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: listWidgets,
-             ),
+            children: listWidgets,
+            ),
             ),
           ),
 
@@ -50,8 +50,8 @@ class AppItemCardWidget extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                topRight: Radius.circular(RADIUS*2),
-                bottomRight: Radius.circular(RADIUS*2)
+                topRight: Radius.circular(radius*2),
+                bottomRight: Radius.circular(radius*2)
                         ),
                         color: itemColor['backColor'],
                       ),
@@ -65,9 +65,9 @@ class AppItemCardWidget extends StatelessWidget {
                   child: Container(
                   decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                topRight: Radius.circular(RADIUS*5),
-                topLeft: Radius.circular(RADIUS*7),
-                bottomRight: Radius.circular(RADIUS*4)
+                topRight: Radius.circular(radius*5),
+                topLeft: Radius.circular(radius*7),
+                bottomRight: Radius.circular(radius*4)
                         ),
                         color: itemColor['fontColor'],
                       ),

@@ -141,16 +141,16 @@ Map<int, Color> color8 = {
 
 MaterialColor primaryColor = MaterialColor(0xFFB24F44, color0);
 MaterialColor secondaryColor = MaterialColor(0xFF33363F, color1);
-MaterialColor tertiairColor = MaterialColor(0xFFEAC1A2, color2);
+MaterialColor tertiairColor = MaterialColor(0xFFD98269, color2);
 MaterialColor blackColor = MaterialColor(0xFF33363F, swatchColor);
 MaterialColor greenColor =  MaterialColor(0xFF43675F,color3);
 MaterialColor orangeColor =  MaterialColor(0xFFEC653C,color4);
 MaterialColor yellowColor =  MaterialColor(0xFFFDCF76,color5);
 MaterialColor pinkColor =  MaterialColor(0xFFF1AEC7,color6);
 MaterialColor indigoColor = MaterialColor(0xFFA493C6,color7);
-MaterialColor LightndigoColor = MaterialColor(0xFF55448B,color8);
-double PADDING = 10;
-double RADIUS = 12;
+MaterialColor lightndigoColor = MaterialColor(0xFF55448B,color8);
+double padding = 10;
+double radius = 12;
 const String boxSettings = 'settings';
 
 
@@ -158,21 +158,21 @@ const String boxSettings = 'settings';
 final List<Map<String, dynamic>> ButtomNavigationList = [
   {
     'label': 'ACCUEIL',
-    'icon': Icons.church,
+    'iconPath': 'assets/images/church.svg',
   },
   {
     'label': 'DEMANDER',
-    'icon': Icons.handshake_outlined,
+    'iconPath': 'assets/images/hand_check.svg',
   },
   {
     
     'label': 'PANIER',
-    'icon': Icons.shopping_cart,
+    'iconPath': 'assets/images/shopping car.svg',
   },
   {
     
     'label': 'PARAMÈTRES',
-    'icon': Icons.settings,
+    'iconPath': 'assets/images/cogwheel.svg',
   },
 ];
 
@@ -197,7 +197,7 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'nombre_messe': '1',
     'motif': 'Pour le bien-aimé Alfred',
   },
-   {
+  {
     'date': 'DIM. 7 AVRIL - 11H',
     'communaute': 'Notre Dame des Apotre',
     'adresse': 'Divo',
@@ -206,7 +206,7 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'nombre_messe': '2',
     'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie , la reussite et prosperité dans ses affaires.',
   },
-   {
+  {
     'date': 'DIM. 7 AVRIL - 11H',
     'communaute': 'Notre Dame des Apotre',
     'adresse': 'Divo',
@@ -215,7 +215,6 @@ final List<Map<String, dynamic>> shoppingItemList = [
     'nombre_messe': '5',
     'motif': 'Pour l’anniversaire de Franck le jour de ses 30 ans afin que le Seigneur lui accorde une encore plus longue vie.',
   },
- 
 ];
 
 
@@ -234,7 +233,7 @@ final List<Map<String, dynamic>> demandeList = [
     'intention': 'Repos de l’âme',
     'motif': 'Pour le bien-aimé Alfred',
   },
-   {
+  {
     'date': 'DIM. 7 AVRIL - 11H',
     'communaute': 'Notre Dame des Apotre',
     'adresse': 'Divo',
@@ -255,20 +254,18 @@ final List<Map<String, dynamic>> demandeList = [
     'intention': 'Action de grâce',
     'motif': 'Pour l’anniversaire de mes petits enfants Franck et Lise',
   },
- 
- 
 ];
 
 
 
 final List<Map<String, dynamic>> egliseList = [
- {
+{
   'eglise': 'Saint Jean-Baptiste',
-   'adresse': 'Abidjan Riviera Palmeraie',
-   'date':[
+  'adresse': 'Abidjan Riviera Palmeraie',
+  'date':[
     {'hour':'8:00'},
     {'hour':'10:30'}
-   ],
+  ],
   },
   {
     'eglise': 'Notre Dame de l\'Incarnation',
@@ -350,22 +347,24 @@ final List<Map<String, dynamic>> indicatifContries = [
 
   final List<Map<String, dynamic>> colorItems = [ 
     {'backColor': indigoColor,
-     "fontColor": pinkColor
-     },
+    "fontColor": pinkColor,
+    
+    },
     {
       'backColor': orangeColor,
-      "fontColor": primaryColor
+      "fontColor": primaryColor,
+      
     },
     {
       'backColor': tertiairColor,
-      "fontColor": greenColor
+      "fontColor": greenColor,
     },
   ];
   final List<Map<String, dynamic>> offeringItems = [ 
 
     {'type': "Une Messe",
-     "price": "3.000"
-     },
+    "price": "3.000"
+    },
     {
       'type': "Une Neuvaine (9 jours)",
       "price": "27.000"

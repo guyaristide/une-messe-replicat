@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:une_messe/core/constants.dart';
+import 'package:une_messe/view/fragments/demande_fragment.dart';
 
 import '../../components/app_buttom_widget.dart';
 import '../../components/shopping_cart_widget.dart';
@@ -24,30 +25,30 @@ class _ShoppingFragmentState extends State<ShoppingFragment> {
           right: 0,
           left: 0,
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: PADDING*2),
+            padding: EdgeInsets.symmetric(horizontal: padding*2),
             child: Column(
               children: [
                 const SizedBox(
                   height: 10,
                 ),
                 SizedBox(
-                     height: 330,
+                    height: 330,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: shoppingItemList.length,
                     itemBuilder: (context, i) {
                       var item = shoppingItemList[i];
                       return Padding(
-                        padding:  EdgeInsets.only(right:PADDING),
+                        padding:  EdgeInsets.only(right:padding),
                         child: ShoppingCartWidget(
-                                 indexItemColor: i,  
-                                 data: item,
+                                indexItemColor: i, 
+                                data: item,
                               ),
                       );
                     },
                   ),
                 ),
-               const SizedBox(
+              const SizedBox(
                   height: 10,
                 ),
               ],
@@ -62,7 +63,7 @@ class _ShoppingFragmentState extends State<ShoppingFragment> {
               color: Colors.white,
               width: size.width,
               height: 200,
-                padding: EdgeInsets.symmetric(horizontal: PADDING * 2),
+                padding: EdgeInsets.symmetric(horizontal: padding * 2),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly ,
                 
@@ -86,19 +87,23 @@ class _ShoppingFragmentState extends State<ShoppingFragment> {
                       ],
                     ),
                   ),
-                  AppButtomWidget(
+                  AppButtonWidget(
                     label: "Payer",
-                     press: () async{
+                    press: () async{
                             await Modals.showModalAddAdresse(context);
                             },
                   ),
-                  AppButtomWidget(
+                  AppButtonWidget(
                     label: "Ajouter une autre demande",
                     buttomColor: greenColor[100],
                     labelColor: greenColor,
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const DemandeFragment ()));
+                    },
                   ),
-                  AppButtomWidget(
+                  AppButtonWidget(
                     label: "Envoyer pour payer en espèces",
                     buttomColor: greenColor[100],
                     labelColor: greenColor,

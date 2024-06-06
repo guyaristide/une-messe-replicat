@@ -21,9 +21,12 @@ class HourItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
             color: greenColor.withOpacity(0.1),
-            borderRadius: BorderRadius.all(Radius.circular(RADIUS))),
+            borderRadius: BorderRadius.all(Radius.circular(radius))),
             child: Text("${hour}",
-            style: TextStyle(fontWeight: FontWeight.bold,color: greenColor),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: greenColor,
+              fontFamily: 'SpaceGrotesk',),
             textAlign: TextAlign.center,),
       ),
     );

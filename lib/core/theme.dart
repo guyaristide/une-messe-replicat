@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'constants.dart';
 
   final baseTheme = ThemeData(
-     colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+    colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
     scaffoldBackgroundColor: Colors.white,
     // primarySwatch: primarySwatchColor,
@@ -59,7 +59,7 @@ import 'constants.dart';
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-     filled: true,
+    filled: true,
             fillColor: Colors.transparent,
             contentPadding: const EdgeInsets.all(8.0),
             hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400,),

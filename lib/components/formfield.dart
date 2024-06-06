@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:une_messe/core/constants.dart';
+//import 'package:une_messe/core/constants.dart';
 
 // ignore: must_be_immutable
 class Formfield extends StatelessWidget {
@@ -35,10 +35,11 @@ class Formfield extends StatelessWidget {
       onTap: press,
       keyboardType: keyboard,
       maxLines: maxline,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: blackColor,
+        fontFamily: 'SpaceGrotesk',
+        color:  Colors.black,
       ),
       decoration: InputDecoration(
         labelText: labelText,

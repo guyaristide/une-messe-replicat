@@ -1,65 +1,93 @@
 import 'package:flutter/material.dart';
-
 import '../core/constants.dart';
 
-// ignore: must_be_immutable
 class TopBarWidget extends StatelessWidget {
-   TopBarWidget({
+  const TopBarWidget({
     super.key,
-    required this.title
+    required this.title,
+    required this.cartItemCount,
+    required this.image,
   });
-String title;
+
+  final String title;
+  final int cartItemCount;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    // Définir les tailles de l'image en fonction de la largeur de l'écran
+    double imageSize;
+
+    // Pour les écrans de petite taille
+    if (screenWidth < 500) {
+      imageSize = 24.0;
+    } else if (screenWidth < 1100) {
+      imageSize = 45.0;
+    } else {
+      imageSize = 60.0;
+    }
+
     return Container(
       height: 90,
       color: greenColor[50],
-      padding:  EdgeInsets.symmetric(horizontal: PADDING * 2),
+      padding: EdgeInsets.symmetric(horizontal: padding * 2),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: Text('${title}',
-            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'SpaceGrotesk',
+            ),
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
-            ),
+          ),
+          const SizedBox(width: 5),
+          Image.asset(
+            image,
+            height: imageSize,
+            width: imageSize,
           ),
           Expanded(
-            flex: 2,
-            child: Align(
+            child: Stack(
               alignment: Alignment.centerRight,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Container(
-                        padding: EdgeInsets.all(PADDING * 1.5),
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(RADIUS))),
-                        child: const Icon(
-                          Icons.shopping_cart,
-                          color: Colors.white,
-                        )),
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.all(Radius.circular(radius)),
                   ),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    color: Colors.white,
+                  ),
+                ),
+                if (cartItemCount > 0)
                   Positioned(
-                      left: 0,
-                      bottom: 0,
-                      child: CircleAvatar(
-                        backgroundColor: primaryColor,
-                        child: const Text(
-                          "0",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
+                    right: 30,
+                    top:30,
+                    child: CircleAvatar(
+                      backgroundColor: primaryColor,
+                      radius: 10,
+                      child: Text(
+                        "$cartItemCount",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
                         ),
-                      ))
-                ],
-              ),
+                      ),
+                    ),
+                  ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     );

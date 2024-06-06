@@ -50,7 +50,7 @@ class _AddAdresseState extends State<AddAdresse> {
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                   borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(RADIUS * 3)),
+                      BorderRadius.vertical(top: Radius.circular(radius * 3)),
                 ),
                 color: Colors.white,
               ),
@@ -65,14 +65,14 @@ class _AddAdresseState extends State<AddAdresse> {
                         height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(RADIUS * 3)),
+                              top: Radius.circular(radius * 3)),
                           color: greenColor[50],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                           Center(child: Image.asset("assets/images/3d Hand-Phone.png")),
+                          Center(child: Image.asset("assets/images/3d Hand-Phone.png")),
                             const SizedBox(
                               height: 8,
                             ),
@@ -87,7 +87,7 @@ class _AddAdresseState extends State<AddAdresse> {
                       ),
                       Positioned(
                         top: 20,
-                        left: PADDING * 2,
+                        left: padding * 2,
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: InkWell(
@@ -113,7 +113,7 @@ class _AddAdresseState extends State<AddAdresse> {
                       )
                     ],
                   ),
-                     Expanded(
+                    Expanded(
                       child: Container(
                         width: size.width,
                       color: greenColor[50],
@@ -121,15 +121,15 @@ class _AddAdresseState extends State<AddAdresse> {
                           child: SpGrid(
                             crossAlignment: WrapCrossAlignment.center,
                             alignment: WrapAlignment.start,
-                            spacing: PADDING*1.5,
-                            runSpacing: PADDING*2,
-                            padding: EdgeInsets.symmetric(vertical: PADDING*1.5),
+                            spacing: padding*1.5,
+                            runSpacing: padding*2,
+                            padding: EdgeInsets.symmetric(vertical: padding*1.5),
                             children: [
-                               SpGridItem(
+                              SpGridItem(
                                 xs: 4,
-                                 child: DropdownButtonFormField<Map<String, dynamic>>(
+                                child: DropdownButtonFormField<Map<String, dynamic>>(
                                   decoration: InputDecoration(
-                                   floatingLabelStyle: TextStyle(color: greenColor, fontSize: 14),
+                                  floatingLabelStyle: TextStyle(color: greenColor, fontSize: 14),
                                   labelStyle: TextStyle(color: greenColor, fontSize: 14,fontWeight: FontWeight.w500,),
                                     labelText: 'Indicatif',
                                     hintStyle: const TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w400,),
@@ -146,7 +146,7 @@ class _AddAdresseState extends State<AddAdresse> {
                                     value: value,
                                     child: Center(
                                       child: Text(value['value'],
-                                       maxLines: 1,
+                                      maxLines: 1,
                                                   overflow: TextOverflow.ellipsis,
                                                   style:  TextStyle(
                                                       fontSize: 14,
@@ -174,7 +174,7 @@ class _AddAdresseState extends State<AddAdresse> {
                                       ),
                                ),
                                SpGridItem(
-                                 child: AppButtomWidget(
+                                 child: AppButtonWidget(
                                   label: "Confirmer",
                                    press: () async{ 
                                     Navigator.pop(context);

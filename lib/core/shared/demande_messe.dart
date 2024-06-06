@@ -54,7 +54,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                   borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(RADIUS * 3)),
+                      BorderRadius.vertical(top: Radius.circular(radius * 3)),
                 ),
                 color: Colors.white,
               ),
@@ -69,7 +69,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                         height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(RADIUS * 3)),
+                              top: Radius.circular(radius * 3)),
                           color: primaryColor,
                         ),
                         child: Column(
@@ -88,18 +88,23 @@ class _DemandeMesseState extends State<DemandeMesse> {
                               style: TextStyle(
                                   color: yellowColor,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'SpaceGrotesk',
+                                  ),
                             ),
                             Text(
                               "${widget.data['adresse']}",
-                              style: const TextStyle(color: Colors.white),
+                              style: const TextStyle(
+                                color: Colors.white,
+                              fontFamily: 'SpaceGrotesk',
+                              ),
                             )
                           ],
                         ),
                       ),
                       Positioned(
                         top: 20,
-                        left: PADDING * 2,
+                        left: padding * 2,
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: InkWell(
@@ -127,7 +132,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(PADDING * 2),
+                      padding: EdgeInsets.all(padding * 2),
                       child: Form(
                         child: SingleChildScrollView(
                           child: Column(
@@ -135,15 +140,24 @@ class _DemandeMesseState extends State<DemandeMesse> {
                               Text(
                                 "${widget.time}",
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'SpaceGrotesk',
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  ),
                               ),
                               Text(
                                 "${widget.hour}",
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
+                                    fontWeight: FontWeight.bold, 
+                                    fontSize: 24,
+                                    fontFamily: 'SpaceGrotesk',
+                                    color: Color(0xff192622)
+                                    ),
                               ),
-                              SizedBox(height: PADDING * 2),
+                              SizedBox(height: padding * 2),
                               Form(
                                   child: Column(
                                 children: [
@@ -152,9 +166,8 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                     hintText: 'Qui demande la messe',
                                   ),
                                   SizedBox(
-                                    height: PADDING * 2,
+                                    height: padding * 2,
                                   ),
-                                 
                                   DropdownButtonFormField<Map<String, dynamic>>(
                                       decoration: InputDecoration(
                                         floatingLabelStyle: TextStyle(
@@ -174,7 +187,7 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                               value['value'],
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(
+                                              style:  TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                                 color: blackColor,
@@ -189,14 +202,14 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                         });
                                       }),
                                   SizedBox(
-                                    height: PADDING * 2,
+                                    height: padding * 2,
                                   ),
-                                   Formfield(
+                                  Formfield(
                                     labelText: "Par l’intercession de",
                                     hintText: 'Par l’intercession de',
                                   ),
                                   SizedBox(
-                                    height: PADDING * 2,
+                                    height: padding * 2,
                                   ),
                                   Formfield(
                                     maxline: 4,
@@ -204,9 +217,9 @@ class _DemandeMesseState extends State<DemandeMesse> {
                                     hintText: 'Pour...',
                                   ),
                                   SizedBox(
-                                    height: PADDING * 2,
+                                    height: padding * 2,
                                   ),
-                                  AppButtomWidget(
+                                  AppButtonWidget(
                                       press: () async {
                                         Navigator.pop(context);
                                         Modals.showModalChoiceOffering(context);

@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+//import 'package:intl/intl.dart';
+import 'package:une_messe/components/items/calendarWidget.dart';
 import 'package:une_messe/core/constants.dart';
-
 import '../../components/eglise_item_widget.dart';
-import '../../components/items/calendarWidget.dart';
 
 class DemandeFragment extends StatefulWidget {
   const DemandeFragment({super.key});
@@ -14,29 +12,30 @@ class DemandeFragment extends StatefulWidget {
 }
 
 class _DemandeFragmentState extends State<DemandeFragment> {
+  int cartItemCount = 0;
 
-  
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
-
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          CalendarWidget(),
-
-          ...List.generate(egliseList.length, (index) {
-           var item = egliseList[index];
-            return EgliseItemWidget(
-              time: 'Dimanche 7 Avril', 
-              data: item,
-            );
-          })
-        ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 0.1),
+          child: Column(
+            children: [
+              const LocalizedCalendarWidget(),
+              ...List.generate(egliseList.length, (index) {
+                var item = egliseList[index];
+                return EgliseItemWidget(
+                  time: 'Dimanche 7 Avril',
+                  data: item,
+                );
+              })
+            ],
+          ),
+        ),
       ),
     );
   }
-
-
- 
 }
+
+

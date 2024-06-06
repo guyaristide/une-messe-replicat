@@ -18,16 +18,18 @@ class _HomeFragmentState extends State<HomeFragment> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: PADDING*2),
+    return Scaffold(
+
+  body: SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: padding*2),
       child: Column(
         children: [
           Container(
             width: size.width,
-            padding: EdgeInsets.all(PADDING * 2),
+            padding: EdgeInsets.all(padding * 2),
             decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(RADIUS * 2))),
+                borderRadius: BorderRadius.all(Radius.circular(radius * 2))),
             child: Column(
               children: [
                 Image.asset(
@@ -36,14 +38,14 @@ class _HomeFragmentState extends State<HomeFragment> {
                   width: size.width,
                 ),
                 SizedBox(
-                  height: PADDING * 2,
+                  height: padding * 2,
                 ),
-                AppButtomWidget(press: () {}, label: "Demander une messe")
+                AppButtonWidget(press: () {}, label: "Demander une messe")
               ],
             ),
           ),
           SizedBox(
-            height: PADDING * 2,
+            height: padding * 2,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -57,7 +59,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                 ),
               ),
               SizedBox(
-                width: PADDING,
+                width: padding,
               ),
               Icon(
                 Icons.arrow_forward_ios,
@@ -67,7 +69,7 @@ class _HomeFragmentState extends State<HomeFragment> {
             ],
           ),
           SizedBox(
-            height: PADDING * 2,
+            height: padding * 2,
           ),
           SizedBox(
             height: 170,
@@ -77,7 +79,7 @@ class _HomeFragmentState extends State<HomeFragment> {
               itemBuilder: (context, i) {
                 var item = demandeList[i];
                 return Padding(
-                  padding:  EdgeInsets.only(right:PADDING),
+                  padding:  EdgeInsets.only(right:padding),
                   child: DemandeItemWidget(
                     indexItemColor: i, 
                     data: item,
@@ -87,32 +89,32 @@ class _HomeFragmentState extends State<HomeFragment> {
             ),
           ),
           SizedBox(
-            height: PADDING * 2,
+            height: padding * 2,
           ),
           Container(
             // height: 200,
-            padding: EdgeInsets.symmetric(horizontal: PADDING * 4)
-                .copyWith(top: PADDING * 4),
+            padding: EdgeInsets.symmetric(horizontal: padding * 4)
+                .copyWith(top: padding * 4),
             decoration: BoxDecoration(
-                color: tertiairColor,
+                color: tertiairColor[50],
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(RADIUS * 2),
-                    topRight: Radius.circular(RADIUS * 2))),
+                    topLeft: Radius.circular(radius * 2),
+                    topRight: Radius.circular(radius ))),
             child: Container(
               width: size.width,
               // padding: EdgeInsets.symmetric(horizontal:PADDING,vertical: PADDING*4),
               decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(RADIUS * 10),
-                      topRight: Radius.circular(RADIUS * 10))),
+                      topLeft: Radius.circular(radius * 10),
+                      topRight: Radius.circular(radius * 10))),
               child: SpGrid(
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 crossAlignment: WrapCrossAlignment.center,
                 alignment: WrapAlignment.start,
-                runSpacing: PADDING*4,
-                spacing: PADDING*4,
-                padding: EdgeInsets.symmetric(vertical: PADDING*4),
+                runSpacing: padding*4,
+                spacing: padding*4,
+                padding: EdgeInsets.symmetric(vertical: padding*4),
                 children: [
                   
                   SpGridItem(
@@ -164,11 +166,11 @@ class _HomeFragmentState extends State<HomeFragment> {
                     md: 4,
                     child: Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: PADDING * 3, vertical: PADDING),
+                          horizontal: padding * 3, vertical: padding),
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius:
-                              BorderRadius.all(Radius.circular(RADIUS * 2))),
+                              BorderRadius.all(Radius.circular(radius * 2))),
                       child: const Text(
                         "Partager",
                         style: TextStyle(color: Colors.white),
@@ -179,11 +181,11 @@ class _HomeFragmentState extends State<HomeFragment> {
                   
                     SpGridItem(
                     md: 4,
-                     child: GestureDetector(
+                    child: GestureDetector(
                       onTap: () async{
                         await Modals.showModalQrcode(context);
                       },
-                       child: const Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -199,16 +201,19 @@ class _HomeFragmentState extends State<HomeFragment> {
                             style: TextStyle(color: Colors.white),
                           )
                         ],
-                                         ),
-                     ),
-                   )
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
           )
         ],
       ),
+    ),
     );
+    
+    
   }
 }
 

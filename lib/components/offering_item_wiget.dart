@@ -14,12 +14,12 @@ dynamic data;
 }
 
 class _OfferingItemWidgetState extends State<OfferingItemWidget> {
-  double value = 0;
+  int value = 0;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal:PADDING*2).copyWith(bottom:PADDING*2 ),
+      padding:  EdgeInsets.symmetric(horizontal:padding*2).copyWith(bottom:padding*2 ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +34,8 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
                 children: [
                   Text("${widget.data['type']}",
                   style: const TextStyle(
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SpaceGrotesk',
                   ),
                   ),
                   const SizedBox(width: 5,),
@@ -44,6 +45,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
               Text("${widget.data['price']} F CFA",
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
+                    fontFamily: 'SpaceGrotesk',
                     color: greenColor,
                   ),
                   ),
@@ -62,7 +64,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
               child: Container(
                 decoration: BoxDecoration(
                   color: value == 0? Colors.grey: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(RADIUS*2))
+                  borderRadius: BorderRadius.all(Radius.circular(radius*2))
                 ),
                 child: const Icon(Icons.remove,color: Colors.white,),
               ),
@@ -80,7 +82,7 @@ class _OfferingItemWidgetState extends State<OfferingItemWidget> {
               child: Container(
                 decoration: BoxDecoration(
                   color: value == 0? Colors.grey: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(RADIUS*2))
+                  borderRadius: BorderRadius.all(Radius.circular(radius*2))
                 ),
                 child: const Icon(Icons.add,color: Colors.white,),
               ),

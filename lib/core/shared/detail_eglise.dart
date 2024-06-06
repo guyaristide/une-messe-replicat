@@ -9,9 +9,10 @@ import 'modals.dart';
 
 
 class DetailEglise extends StatefulWidget {
-  dynamic data;
+  final dynamic data;
 
-   DetailEglise({
+ 
+  const DetailEglise({
     super.key,
     required this.data
   });
@@ -52,7 +53,7 @@ class _DetailEgliseState extends State<DetailEglise> {
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                   borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(RADIUS * 3)),
+                      BorderRadius.vertical(top: Radius.circular(radius * 3)),
                 ),
                 color: Colors.white,
               ),
@@ -67,7 +68,7 @@ class _DetailEgliseState extends State<DetailEglise> {
                         height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(RADIUS * 3)),
+                              top: Radius.circular(radius * 3)),
                           color: primaryColor,
                         ),
                         child: Column(
@@ -97,7 +98,7 @@ class _DetailEgliseState extends State<DetailEglise> {
                       ),
                       Positioned(
                         top: 20,
-                        left: PADDING * 2,
+                        left: padding * 2,
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: InkWell(
@@ -127,12 +128,12 @@ class _DetailEgliseState extends State<DetailEglise> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          CalendarWidget(),
-                          SizedBox(height: 20),
+                          const LocalizedCalendarWidget(),
+                          const SizedBox(height: 20),
                           SpGrid(
                             width: size.width,
-                              spacing: PADDING * 2,
-                              runSpacing: PADDING * 2,
+                              spacing: padding * 2,
+                              runSpacing: padding * 2,
                               crossAlignment: WrapCrossAlignment.center,
                               alignment: WrapAlignment.start,
                               runAlignment: WrapAlignment.start,
@@ -150,7 +151,7 @@ class _DetailEgliseState extends State<DetailEglise> {
                                         context, 
                                         time: "DIM 05 MAI", 
                                         hour: widget.data['date'][index]['hour'],
-                                         data: widget.data,
+                                        data: widget.data,
                                       );
                                     },));
                                 })
