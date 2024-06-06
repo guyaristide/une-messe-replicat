@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:une_messe/responsive_fragments/shopping_fragment_mobile.dart';
+
+import 'package:une_messe/view/fragments/shopping_fragment.dart';
 
 import '../components/bottomnavigationwidget.dart';
 import '../components/top_bar_wdget.dart';
